@@ -105,10 +105,10 @@ Timestamp format</h1>
 <p >Timestamps are 64-bit unsigned integers naming a point in application time. WiredTiger does not interpret timestamps other than expecting larger timestamps to correspond to "later" times. Timestamp 0 is reserved, so timestamps must start at 1 or greater. It is not necessary for timestamp values to be clock time of any kind; an expected source for application timestamps is a global counter shared within a replica set. (A replica set is a group of instances of an application running on multiple instances of WiredTiger databases, usually distributed across a network.)</p>
 <p >Timestamps are read from and written to the WiredTiger API as hexadecimal strings without any leading prefix like "0x". Applications using timestamps must format those time values as hexadecimal when querying or setting timestamps in WiredTiger:</p>
 <div class="fragment"><div class="line">        uint64_t ts;</div>
-<div class="line">        <span class="comment">/* 2 bytes for each byte converted to hexadecimal, plus a trailing nul byte */</span></div>
-<div class="line">        <span class="keywordtype">char</span> timestamp_buf[strlen(<span class="stringliteral">&quot;commit_timestamp=&quot;</span>) + 2 * <span class="keyword">sizeof</span>(uint64_t) + 1];</div>
+<div class="line">        <span class="comment">/* 2 bytes for each byte converted to hexadecimal; sizeof includes the trailing nul byte */</span></div>
+<div class="line">        <span class="keywordtype">char</span> timestamp_buf[<span class="keyword">sizeof</span>(<span class="stringliteral">&quot;commit_timestamp=&quot;</span>) + 2 * <span class="keyword">sizeof</span>(uint64_t)];</div>
 <div class="line"> </div>
-<div class="line">        (void)snprintf(timestamp_buf, <span class="keyword">sizeof</span>(timestamp_buf), <span class="stringliteral">&quot;commit_timestamp=%x&quot;</span>, 100u);</div>
+<div class="line">        (void)snprintf(timestamp_buf, <span class="keyword">sizeof</span>(timestamp_buf), <span class="stringliteral">&quot;commit_timestamp=%x&quot;</span>, 20u);</div>
 <div class="line">        error_check(session-&gt;timestamp_transaction(session, timestamp_buf));</div>
 <div class="line"> </div>
 <div class="line">        error_check(conn-&gt;query_timestamp(conn, timestamp_buf, <span class="stringliteral">&quot;get=all_durable&quot;</span>));</div>

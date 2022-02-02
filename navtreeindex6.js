@@ -1,10 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"struct_w_t___c_o_m_p_r_e_s_s_o_r.html#ad23cc1486dc4c0cc51835cfaecb01a33":[1,1,1,3],
-"struct_w_t___c_o_n_f_i_g___i_t_e_m.html":[1,0,6],
-"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#a4aefab7843f434e5a5cc18203e9fec5f":[1,0,6,3],
-"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#a522b293b25db519b105556273f9f84c9":[1,0,6,2],
-"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#aa0ce7d30a32600e16824966c638ee45f":[1,0,6,1],
 "struct_w_t___c_o_n_f_i_g___i_t_e_m.html#adff0f6e5a3f781f0228015e8336f1a14":[1,0,6,0],
 "struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html":[1,0,7],
 "struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a2033bdd009b0a75ade51305f00a7dc8f":[1,0,7,2],
@@ -249,5 +244,10 @@ var NAVTREEINDEX6 =
 "tool-libfuzzer.html#autotoc_md79":[0,10,6,2,1],
 "tool-libfuzzer.html#autotoc_md80":[0,10,6,2,2],
 "tool-optrack.html":[0,10,2],
-"tool-optrack.html#autotoc_md81":[0,10,2,0]
+"tool-optrack.html#autotoc_md81":[0,10,2,0],
+"tool-optrack.html#autotoc_md82":[0,10,2,0,0],
+"tool-optrack.html#autotoc_md83":[0,10,2,0,1],
+"tool-optrack.html#autotoc_md84":[0,10,2,0,2],
+"tool-optrack.html#autotoc_md85":[0,10,2,1],
+"tool-optrack.html#autotoc_md86":[0,10,2,1,0]
 };
