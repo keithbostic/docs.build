@@ -107,7 +107,7 @@ var NAVTREEINDEX5 =
 "in_memory.html":[0,3,30],
 "index.html":[],
 "index.html":[0],
-"keyvalue.html":[0,3,3,13],
+"keyvalue.html":[0,3,3,11],
 "license.html":[6],
 "license.html":[0,8],
 "license.html#license_crc32-power8":[0,8,1],
@@ -202,8 +202,8 @@ var NAVTREEINDEX5 =
 "overview.html#multi_core":[0,0,0],
 "overview.html#nosql":[0,0,4],
 "overview.html#quality":[0,0,3],
-"packing.html":[0,3,3,14],
-"packing.html#config_examples":[0,3,3,14,0],
+"packing.html":[0,3,3,12],
+"packing.html#config_examples":[0,3,3,12,0],
 "pages.html":[],
 "programming.html":[0,3],
 "readonly.html":[0,3,26],
@@ -214,8 +214,6 @@ var NAVTREEINDEX5 =
 "readonly.html#readonly_recovery":[0,3,26,1],
 "rotn_encrypt_8c-example.html":[4,17],
 "schema.html":[0,3,3],
-"schema.html#diff_logged_non_logged_tables":[0,3,3,12],
-"schema.html#logged_non_logged_tables":[0,3,3,11],
 "schema.html#schema_column_groups":[0,3,3,6],
 "schema.html#schema_column_types":[0,3,3,1],
 "schema.html#schema_columns":[0,3,3,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX5 =
 "struct_w_t___c_o_n_f_i_g___i_t_e_m.html":[1,0,6],
 "struct_w_t___c_o_n_f_i_g___i_t_e_m.html#a4aefab7843f434e5a5cc18203e9fec5f":[1,0,6,3],
 "struct_w_t___c_o_n_f_i_g___i_t_e_m.html#a522b293b25db519b105556273f9f84c9":[1,0,6,2],
-"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#aa0ce7d30a32600e16824966c638ee45f":[1,0,6,1]
+"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#aa0ce7d30a32600e16824966c638ee45f":[1,0,6,1],
+"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#adff0f6e5a3f781f0228015e8336f1a14":[1,0,6,0],
+"struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html":[1,0,7]
 };

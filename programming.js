@@ -57,7 +57,7 @@ var programming =
     [ "Managing the global timestamp state", "timestamp_global_api.html", [
       [ "Setting global timestamps", "timestamp_global_api.html#timestamp_global_setting_timestamps", [
         [ "Setting the global \"durable_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_durable_timestamp", null ],
-        [ "Setting the \"oldest_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_oldest_timestamp", null ],
+        [ "Setting the \\c \"oldest_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_oldest_timestamp", null ],
         [ "Setting the \"stable_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_stable_timestamp", null ],
         [ "Forcing global timestamps", "timestamp_global_api.html#timestamp_global_forcing", null ]
       ] ],

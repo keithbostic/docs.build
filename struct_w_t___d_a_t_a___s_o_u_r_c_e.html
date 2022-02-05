@@ -153,7 +153,7 @@ Public Attributes</h2></td></tr>
 <div class="line">          my_rename, my_salvage, my_size, my_truncate, my_range_truncate, my_verify, my_checkpoint,</div>
 <div class="line">          my_terminate, my_lsm_pre_merge};</div>
 <div class="line">        error_check(conn-&gt;add_data_source(conn, <span class="stringliteral">&quot;dsrc:&quot;</span>, &amp;my_dsrc, NULL));</div>
-<div class="ttc" id="astruct_w_t___d_a_t_a___s_o_u_r_c_e_html"><div class="ttname"><a href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html">WT_DATA_SOURCE</a></div><div class="ttdoc">Applications can extend WiredTiger by providing new implementations of the WT_DATA_SOURCE class.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4083</div></div>
+<div class="ttc" id="astruct_w_t___d_a_t_a___s_o_u_r_c_e_html"><div class="ttname"><a href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html">WT_DATA_SOURCE</a></div><div class="ttdoc">Applications can extend WiredTiger by providing new implementations of the WT_DATA_SOURCE class.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4081</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a1a7b6f26d733bd91ad8d205d8cb3482d" name="a1a7b6f26d733bd91ad8d205d8cb3482d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a7b6f26d733bd91ad8d205d8cb3482d">&#9670;&nbsp;</a></span>alter</h2>
@@ -170,8 +170,8 @@ Public Attributes</h2></td></tr>
 <p>Callback to alter an object. </p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span></div>
 <div class="line">my_alter(<a class="code hl_struct" href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html">WT_DATA_SOURCE</a> *dsrc, <a class="code hl_struct" href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a> *session, <span class="keyword">const</span> <span class="keywordtype">char</span> *uri, <a class="code hl_typedef" href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a> *config)</div>
-<div class="ttc" id="agroup__wt__ext_html_ga6fa5797cf581d18dc843e07333a497e4"><div class="ttname"><a href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a></div><div class="ttdeci">struct WT_CONFIG_ARG WT_CONFIG_ARG</div><div class="ttdoc">A configuration object passed to some extension interfaces.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3867</div></div>
-<div class="ttc" id="astruct_w_t___s_e_s_s_i_o_n_html"><div class="ttname"><a href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a></div><div class="ttdoc">All data operations are performed in the context of a WT_SESSION.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:758</div></div>
+<div class="ttc" id="agroup__wt__ext_html_ga6fa5797cf581d18dc843e07333a497e4"><div class="ttname"><a href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a></div><div class="ttdeci">struct WT_CONFIG_ARG WT_CONFIG_ARG</div><div class="ttdoc">A configuration object passed to some extension interfaces.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3865</div></div>
+<div class="ttc" id="astruct_w_t___s_e_s_s_i_o_n_html"><div class="ttname"><a href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a></div><div class="ttdoc">All data operations are performed in the context of a WT_SESSION.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:757</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -398,7 +398,7 @@ Public Attributes</h2></td></tr>
 <p>Callback to get the size of an object. </p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span></div>
 <div class="line">my_size(<a class="code hl_struct" href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html">WT_DATA_SOURCE</a> *dsrc, <a class="code hl_struct" href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a> *session, <span class="keyword">const</span> <span class="keywordtype">char</span> *uri, wt_off_t *<a class="code hl_variable" href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a817b5bc96a33010a1caca4a745a9d16d">size</a>)</div>
-<div class="ttc" id="astruct_w_t___d_a_t_a___s_o_u_r_c_e_html_a817b5bc96a33010a1caca4a745a9d16d"><div class="ttname"><a href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a817b5bc96a33010a1caca4a745a9d16d">WT_DATA_SOURCE::size</a></div><div class="ttdeci">int(* size)(WT_DATA_SOURCE *dsrc, WT_SESSION *session, const char *uri, wt_off_t *size)</div><div class="ttdoc">Callback to get the size of an object.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4145</div></div>
+<div class="ttc" id="astruct_w_t___d_a_t_a___s_o_u_r_c_e_html_a817b5bc96a33010a1caca4a745a9d16d"><div class="ttname"><a href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a817b5bc96a33010a1caca4a745a9d16d">WT_DATA_SOURCE::size</a></div><div class="ttdeci">int(* size)(WT_DATA_SOURCE *dsrc, WT_SESSION *session, const char *uri, wt_off_t *size)</div><div class="ttdoc">Callback to get the size of an object.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4143</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

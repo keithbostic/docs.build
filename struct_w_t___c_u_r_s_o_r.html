@@ -105,12 +105,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeea071f192cab12245a50fbe71c3460b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_t___c_u_r_s_o_r.html#aeea071f192cab12245a50fbe71c3460b">close</a> (<a class="el" href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a> *cursor)</td></tr>
 <tr class="memdesc:aeea071f192cab12245a50fbe71c3460b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the cursor.  <a href="struct_w_t___c_u_r_s_o_r.html#aeea071f192cab12245a50fbe71c3460b">More...</a><br /></td></tr>
 <tr class="separator:aeea071f192cab12245a50fbe71c3460b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f70806bf693462e5644edbbb864c1b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">largest_key</a> (<a class="el" href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a> *cursor)</td></tr>
+<tr class="memdesc:a49f70806bf693462e5644edbbb864c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the table's largest key, ignoring visibility.  <a href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">More...</a><br /></td></tr>
+<tr class="separator:a49f70806bf693462e5644edbbb864c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a97a309e2c1ada7ca32a422c46612a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_t___c_u_r_s_o_r.html#ad6a97a309e2c1ada7ca32a422c46612a">reconfigure</a> (<a class="el" href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a> *cursor, const char *config)</td></tr>
 <tr class="memdesc:ad6a97a309e2c1ada7ca32a422c46612a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconfigure the cursor.  <a href="struct_w_t___c_u_r_s_o_r.html#ad6a97a309e2c1ada7ca32a422c46612a">More...</a><br /></td></tr>
 <tr class="separator:ad6a97a309e2c1ada7ca32a422c46612a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f70806bf693462e5644edbbb864c1b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">largest_key</a> (<a class="el" href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a> *cursor)</td></tr>
-<tr class="memdesc:a49f70806bf693462e5644edbbb864c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the largest key of the cursor regardless of visibility.  <a href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">More...</a><br /></td></tr>
-<tr class="separator:a49f70806bf693462e5644edbbb864c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Data access</div></td></tr>
 <tr class="memitem:af19f6f9d9c7fc248ab38879032620b2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_w_t___c_u_r_s_o_r.html#af19f6f9d9c7fc248ab38879032620b2f">get_key</a> (<a class="el" href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a> *cursor,...)</td></tr>
 <tr class="memdesc:af19f6f9d9c7fc248ab38879032620b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the key for the current record.  <a href="struct_w_t___c_u_r_s_o_r.html#af19f6f9d9c7fc248ab38879032620b2f">More...</a><br /></td></tr>
@@ -490,16 +490,19 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>uri</b></td><
       </table>
 </div><div class="memdoc">
 
-<p>Get the largest key of the cursor regardless of visibility. </p>
-<p >The cursor is not positioned after calling this api. Only supported by data cursors.</p>
-<div class="fragment"><div class="line">    error_check(cursor-&gt;reset(cursor));</div>
+<p>Get the table's largest key, ignoring visibility. </p>
+<p >This method is only supported by file: or table: objects. The cursor ends with no position.</p>
+<div class="fragment"><div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">largest_key</a>;</div>
+<div class="line">        error_check(cursor-&gt;largest_key(cursor));</div>
+<div class="line">        error_check(cursor-&gt;get_key(cursor, &amp;<a class="code hl_function" href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">largest_key</a>));</div>
+<div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html_a49f70806bf693462e5644edbbb864c1b"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html#a49f70806bf693462e5644edbbb864c1b">WT_CURSOR::largest_key</a></div><div class="ttdeci">int largest_key(WT_CURSOR *cursor)</div><div class="ttdoc">Get the table's largest key, ignoring visibility.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cursor</td><td>the cursor handle </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>zero on success and a non-zero error code on failure. See <a class="el" href="error_handling.html">Error handling</a> for details. If <code>read_timestamp</code> is set, EINVAL is returned. Also, calling <code><a class="el" href="struct_w_t___c_u_r_s_o_r.html#af19f6f9d9c7fc248ab38879032620b2f" title="Get the key for the current record.">WT_CURSOR::get_key</a></code> after this api call returns EINVAL. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zero on success and a non-zero error code on failure. See <a class="el" href="error_handling.html">Error handling</a> for details. EINVAL is returned if the read timestamp is set. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ex_cursor_8c-example.html#a14">ex_cursor.c</a>.</dd>
 </dl>
 
@@ -901,7 +904,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>uri</b></td><
 <div class="line">        <span class="comment">/* the rest of the scan */</span></div>
 <div class="line">    }</div>
 <div class="line">    scan_end_check(ret == <a class="code hl_define" href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a>);</div>
-<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3802</div></div>
+<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3800</div></div>
 </div><!-- fragment --><p >An example of a backward scan through the table, where all keys less than a specified prefix are included in the scan:</p>
 <div class="fragment"><div class="line">    cursor-&gt;set_key(cursor, key);</div>
 <div class="line">    error_check(cursor-&gt;search_near(cursor, &amp;exact));</div>

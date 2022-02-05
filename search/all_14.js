@@ -4,7 +4,7 @@ var searchData=
   ['testing_20with_20llvm_20libfuzzer_1',['Testing with LLVM LibFuzzer',['../tool-libfuzzer.html',1,'tool-index']]],
   ['timestamp_20overview_2',['Timestamp overview',['../timestamp_model.html',1,'programming']]],
   ['timestamp_5ftransaction_3',['timestamp_transaction',['../struct_w_t___s_e_s_s_i_o_n.html#aa449082ce4de7ee86a773595c416a69f',1,'WT_SESSION']]],
-  ['timestamps_20and_20timestamping_4',['Timestamps and timestamping',['../arch-timestamp.html',1,'arch-toc-fundamentals']]],
+  ['timestamps_4',['Timestamps',['../arch-timestamp.html',1,'arch-toc-fundamentals']]],
   ['tools_5',['Tools',['../arch-toc-tools.html',1,'arch-index']]],
   ['tools_20and_20techniques_6',['Tools and Techniques',['../tool-index.html',1,'index']]],
   ['track_20function_20calls_7',['Track function calls',['../operation_tracking.html',1,'programming']]],

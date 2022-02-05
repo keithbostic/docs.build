@@ -1,7 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"struct_w_t___c_o_n_f_i_g___i_t_e_m.html#adff0f6e5a3f781f0228015e8336f1a14":[1,0,6,0],
-"struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html":[1,0,7],
 "struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a2033bdd009b0a75ade51305f00a7dc8f":[1,0,7,2],
 "struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a44eea5e27a4da10006ab444ee7cf00f3":[1,0,7,0],
 "struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#ad0b4eef618f34b00edfbac44b24c5c16":[1,0,7,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX6 =
 "tool-optrack.html#autotoc_md83":[0,10,2,0,1],
 "tool-optrack.html#autotoc_md84":[0,10,2,0,2],
 "tool-optrack.html#autotoc_md85":[0,10,2,1],
-"tool-optrack.html#autotoc_md86":[0,10,2,1,0]
+"tool-optrack.html#autotoc_md86":[0,10,2,1,0],
+"tool-optrack.html#autotoc_md87":[0,10,2,1,1],
+"tool-optrack.html#autotoc_md88":[0,10,2,1,2]
 };
