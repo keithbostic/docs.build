@@ -26,7 +26,9 @@ var programming =
     ] ],
     [ "Checkpoint durability", "checkpoint.html", [
       [ "Checkpoints vs. snapshots", "checkpoint.html#checkpoint_snapshot", null ],
-      [ "Checkpoints", "checkpoint.html#checkpoints", null ],
+      [ "Checkpoints", "checkpoint.html#checkpoints", [
+        [ "Checkpointing specific objects", "checkpoint.html#checkpoint_target", null ]
+      ] ],
       [ "Checkpoint cursors", "checkpoint.html#checkpoint_cursors", null ],
       [ "Checkpoint naming", "checkpoint.html#checkpoint_naming", null ],
       [ "Checkpoint durability and backups", "checkpoint.html#checkpoint_backup", null ],
