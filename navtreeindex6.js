@@ -132,9 +132,10 @@ var NAVTREEINDEX6 =
 "timestamp_misc.html#timestamp_misc_diagnostic":[0,3,14,1],
 "timestamp_misc.html#timestamp_misc_reset_snapshot":[0,3,14,2],
 "timestamp_misc.html#timestamp_misc_rts":[0,3,14,0],
+"timestamp_misc.html#timestamps_misc_in_memory":[0,3,14,3],
 "timestamp_model.html":[0,3,9],
 "timestamp_model.html#timestamp_transactions":[0,3,9,1],
-"timestamp_model.html#timestamps_durability_checkpoint":[0,3,9,3,0],
+"timestamp_model.html#timestamps_durability_checkpoint":[0,3,9,4],
 "timestamp_model.html#timestamps_durability_commit":[0,3,9,3],
 "timestamp_model.html#timestamps_format":[0,3,9,2],
 "timestamp_model.html#timestamps_global":[0,3,9,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "tune_page_size_and_comp.html#table_compress":[0,3,57,2,0],
 "tune_read_only.html":[0,3,58],
 "tune_statistics.html":[0,3,44],
-"tune_system_buffer_cache.html":[0,3,59],
-"tune_system_buffer_cache.html#tuning_system_buffer_cache_direct_io":[0,3,59,0]
+"tune_system_buffer_cache.html":[0,3,59]
 };

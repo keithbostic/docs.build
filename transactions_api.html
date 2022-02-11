@@ -132,7 +132,7 @@ Explicit transactions</h1>
 <div class="line">    <span class="comment">/*</span></div>
 <div class="line"><span class="comment">     * Cursors remain open and may be used for multiple transactions.</span></div>
 <div class="line"><span class="comment">     */</span></div>
-<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3788</div></div>
+<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3781</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="transactions_implicit"></a>
 Implicit transactions</h1>
 <p >While any operation consisting of multiple related updates should be enclosed in an explicit transaction to ensure the updates are applied atomically, it is not necessary to start explicit transactions for single operations. If no explicit transaction is started, each update operation is automatically committed before it returns.</p>
