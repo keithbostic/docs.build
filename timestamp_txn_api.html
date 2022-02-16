@@ -136,7 +136,7 @@ Configuring transaction timestamp information with WT_SESSION::commit_transactio
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">commit_timestamp   </td><td class="markdownTableBodyNone">&gt;= stable and &gt;= prepare and &gt;= any system read timestamp   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_txn_api.html#timestamp_txn_api_commit_timestamp">Setting the transaction's "commit_timestamp"</a>; the transaction's commit timestamp    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">durable_timestamp   </td><td class="markdownTableBodyNone">&gt;= commit and &gt; stable   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's durable timestamp, only applicable to prepared transactions   </td></tr>
+<td class="markdownTableBodyNone">durable_timestamp   </td><td class="markdownTableBodyNone">&gt;= commit   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's durable timestamp, only applicable to prepared transactions   </td></tr>
 </table>
 <h1><a class="anchor" id="timestamp_txn_api_prepare"></a>
 Configuring transaction timestamp information with WT_SESSION::prepare_transaction</h1>
@@ -145,7 +145,7 @@ Configuring transaction timestamp information with WT_SESSION::prepare_transacti
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Timestamp   </th><th class="markdownTableHeadNone">Constraint   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">prepare_timestamp   </td><td class="markdownTableBodyNone">&gt; stable and &gt;= any system read timestamp   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's prepare timestamp   </td></tr>
+<td class="markdownTableBodyNone">prepare_timestamp   </td><td class="markdownTableBodyNone">&gt;= stable and &gt;= any system read timestamp   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's prepare timestamp   </td></tr>
 </table>
 <h1><a class="anchor" id="timestamp_txn_api_timestamp_transaction"></a>
 Configuring transaction timestamp information with WT_SESSION::timestamp_transaction</h1>
@@ -156,9 +156,9 @@ Configuring transaction timestamp information with WT_SESSION::timestamp_transac
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">commit_timestamp   </td><td class="markdownTableBodyNone">&gt;= stable and &gt;= prepare and &gt;= any system read timestamp   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_txn_api.html#timestamp_txn_api_commit_timestamp">Setting the transaction's "commit_timestamp"</a>; the transaction's commit timestamp    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">durable_timestamp   </td><td class="markdownTableBodyNone">&gt;= commit and &gt; stable   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's durable timestamp, only applicable to prepared transactions    </td></tr>
+<td class="markdownTableBodyNone">durable_timestamp   </td><td class="markdownTableBodyNone">&gt;= commit   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's durable timestamp, only applicable to prepared transactions    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">prepare_timestamp   </td><td class="markdownTableBodyNone">&gt; stable and &gt;= any system read timestamp   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's prepare timestamp    </td></tr>
+<td class="markdownTableBodyNone">prepare_timestamp   </td><td class="markdownTableBodyNone">&gt;= stable and &gt;= any system read timestamp   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>; the transaction's prepare timestamp    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">read_timestamp   </td><td class="markdownTableBodyNone">&gt;= oldest or &gt;= pinned   </td><td class="markdownTableBodyNone">see <a class="el" href="timestamp_txn_api.html#timestamp_txn_api_read_timestamp">Setting the transaction's "read_timestamp"</a>; the transaction's read timestamp   </td></tr>
 </table>

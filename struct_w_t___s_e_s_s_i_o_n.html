@@ -346,7 +346,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">    <span class="comment">/*</span></div>
 <div class="line"><span class="comment">     * Cursors remain open and may be used for multiple transactions.</span></div>
 <div class="line"><span class="comment">     */</span></div>
-<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3784</div></div>
+<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3788</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -369,7 +369,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>roundup_timestamps = (</code></td><td>round up timestamps of the transaction. This setting alters the visibility expected in a transaction. See <a class="el" href="timestamp_roundup.html">Automatic timestamp rounding</a>.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;prepared</code></td><td>applicable only for prepared transactions, and intended only for special-purpose use. (See <a class="el" href="timestamp_roundup.html#timestamp_roundup_prepare">Replaying prepared transactions by rounding up the prepare timestamp</a>.) Allows the prepare timestamp and the commit timestamp of this transaction to be rounded up to be no older than the oldest timestamp, and allows violating the usual restriction that the prepare timestamp must be newer than the stable timestamp. Specifically: if the prepare timestamp is less than or equal to the oldest timestamp, the prepare timestamp will be rounded to the oldest timestamp. Then, if the commit timestamp is less than the prepare timestamp, the commit timestamp will be rounded up to the prepare timestamp. Neither timestamp will be checked against the stable timestamp.</td><td>a boolean flag; default <code>false</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;prepared</code></td><td>applicable only for prepared transactions. Indicates if the prepare timestamp and the commit timestamp of this transaction can be rounded up. If the prepare timestamp is less than the stable timestamp, the prepare timestamp will be rounded to the stable timestamp. If the commit timestamp is less than the prepare timestamp, the commit timestamp will be rounded up to the prepare timestamp.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
 <td><code>&#160;&#160;&#160;&#160;read</code></td><td>if the read timestamp is less than the oldest timestamp, the read timestamp will be rounded up to the oldest timestamp.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
@@ -597,7 +597,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>commit_timestamp</code></td><td>set the commit timestamp for the current transaction. The supplied value must not be older than the first commit timestamp already set for the current transaction, if any. The value must also not be older than the current oldest and stable timestamps. For prepared transactions, exactly one commit timestamp is required; it must not be older than the prepare timestamp. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. The supplied value must not be older than the commit timestamp set for the current transaction. The value must also be newer than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. The supplied value must not be older than the commit timestamp set for the current transaction. The value must also not be older than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 <tr>
 <td><code>operation_timeout_ms</code></td><td>when non-zero, a requested limit on the time taken to complete operations in this transaction. Time is measured in real time milliseconds from the start of each WiredTiger API call. There is no guarantee any operation will not take longer than this amount of time. If WiredTiger notices the limit has been exceeded, an operation may return a WT_ROLLBACK error. Default is to have no limit.</td><td>an integer greater than or equal to 1; default <code>0</code>. </td></tr>
 <tr>
@@ -1006,7 +1006,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">          <span class="stringliteral">&quot;: country %s, year %&quot;</span> PRIu16 <span class="stringliteral">&quot;, population %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, country, year, population);</div>
 <div class="line">    }</div>
 <div class="line">    scan_end_check(ret == <a class="code hl_define" href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a>);</div>
-<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3804</div></div>
+<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3808</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -1366,7 +1366,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <th>Name</th><th>Effect</th><th>Values </th></tr>
 <tr>
-<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must be newer than the current stable timestamp. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must not be older than the current stable timestamp. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -1840,9 +1840,9 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>commit_timestamp</code></td><td>set the commit timestamp for the current transaction. The supplied value must not be older than the first commit timestamp already set for the current transaction, if any. The value must also not be older than the current oldest and stable timestamps. For prepared transactions, a commit timestamp is required for commit, must not be older than the prepare timestamp, can be set only once, and must not be set until after the transaction has successfully prepared. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. Can only be set once the current transaction has been prepared, and a commit timestamp has been set. The supplied value must not be older than the commit timestamp. The value must also be newer than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. Can only be set once the current transaction has been prepared, and a commit timestamp has been set. The supplied value must not be older than the commit timestamp. The value must also not be older than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must be newer than the current stable timestamp. Can be set only once per transaction. Setting the prepare timestamp does not by itself prepare the transaction, but does oblige the application to eventually prepare the transaction before committing it. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must not be older than the current stable timestamp. Can be set only once per transaction. Setting the prepare timestamp does not by itself prepare the transaction, but does oblige the application to eventually prepare the transaction before committing it. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 <tr>
 <td><code>read_timestamp</code></td><td>read using the specified timestamp. The supplied value must not be older than the current oldest timestamp. This can only be set once for a transaction. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string; default empty. </td></tr>
 </table>
