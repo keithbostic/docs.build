@@ -241,7 +241,7 @@ Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nop_calls; <span class="comment">/* Count of calls */</span></div>
 <div class="line"> </div>
 <div class="line">} NOP_COMPRESSOR;</div>
-<div class="ttc" id="astruct_w_t___c_o_m_p_r_e_s_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_m_p_r_e_s_s_o_r.html">WT_COMPRESSOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom compression.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3940</div></div>
+<div class="ttc" id="astruct_w_t___c_o_m_p_r_e_s_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_m_p_r_e_s_s_o_r.html">WT_COMPRESSOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom compression.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3933</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> * wiredtiger_extension_init --</span></div>
 <div class="line"><span class="comment"> *     A simple shared library compression example.</span></div>
@@ -279,7 +279,7 @@ Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> (ret);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__wt__ext_html_ga5ed14c916d5dcfe0e81aea9d9ccb7fe3"><div class="ttname"><a href="group__wt__ext.html#ga5ed14c916d5dcfe0e81aea9d9ccb7fe3">wiredtiger_extension_init</a></div><div class="ttdeci">int wiredtiger_extension_init(WT_CONNECTION *connection, WT_CONFIG_ARG *config)</div><div class="ttdoc">Entry point to an extension, called when the extension is loaded.</div></div>
-<div class="ttc" id="agroup__wt__ext_html_ga6fa5797cf581d18dc843e07333a497e4"><div class="ttname"><a href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a></div><div class="ttdeci">struct WT_CONFIG_ARG WT_CONFIG_ARG</div><div class="ttdoc">A configuration object passed to some extension interfaces.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3873</div></div>
+<div class="ttc" id="agroup__wt__ext_html_ga6fa5797cf581d18dc843e07333a497e4"><div class="ttname"><a href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a></div><div class="ttdeci">struct WT_CONFIG_ARG WT_CONFIG_ARG</div><div class="ttdoc">A configuration object passed to some extension interfaces.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3866</div></div>
 <div class="ttc" id="astruct_w_t___c_o_n_n_e_c_t_i_o_n_html_a4f26bfa799ae5e72b536ac93d6200783"><div class="ttname"><a href="struct_w_t___c_o_n_n_e_c_t_i_o_n.html#a4f26bfa799ae5e72b536ac93d6200783">WT_CONNECTION::add_compressor</a></div><div class="ttdeci">int add_compressor(WT_CONNECTION *connection, const char *name, WT_COMPRESSOR *compressor, const char *config)</div><div class="ttdoc">Add a compression function.</div></div>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ex_encrypt_8c-example.html#_a4">ex_encrypt.c</a>, <a class="el" href="ex_file_system_8c-example.html#_a1">ex_file_system.c</a>, <a class="el" href="nop_encrypt_8c-example.html#_a1">nop_encrypt.c</a>, <a class="el" href="rotn_encrypt_8c-example.html#_a1">rotn_encrypt.c</a>, and <a class="el" href="sodium_encrypt_8c-example.html#_a1">sodium_encrypt.c</a>.</dd>
 </dl>
@@ -362,7 +362,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="comment">             */</span></div>
 <div class="line">            error_check(wt_api-&gt;collator_config(</div>
 <div class="line">              wt_api, session, <span class="stringliteral">&quot;dsrc:&quot;</span>, config, &amp;collator, &amp;collator_owned));</div>
-<div class="ttc" id="astruct_w_t___c_o_l_l_a_t_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_l_l_a_t_o_r.html">WT_COLLATOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom ordering of records.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3887</div></div>
+<div class="ttc" id="astruct_w_t___c_o_l_l_a_t_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_l_l_a_t_o_r.html">WT_COLLATOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom ordering of records.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3880</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -406,9 +406,9 @@ Public Attributes</h2></td></tr>
 <div class="line">                my_data_source_key = <span class="stringliteral">&quot;recno&quot;</span>;</div>
 <div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">                my_data_source_key = <span class="stringliteral">&quot;bytestring&quot;</span>;</div>
-<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html">WT_CONFIG_ITEM</a></div><div class="ttdoc">The configuration information returned by the WiredTiger configuration parsing functions in the WT_EX...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3519</div></div>
-<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html_aa0ce7d30a32600e16824966c638ee45f"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html#aa0ce7d30a32600e16824966c638ee45f">WT_CONFIG_ITEM::str</a></div><div class="ttdeci">const char * str</div><div class="ttdoc">The value of a configuration string.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3530</div></div>
-<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html_adff0f6e5a3f781f0228015e8336f1a14"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html#adff0f6e5a3f781f0228015e8336f1a14">WT_CONFIG_ITEM::len</a></div><div class="ttdeci">size_t len</div><div class="ttdoc">The number of bytes in the value referenced by str.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3533</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html">WT_CONFIG_ITEM</a></div><div class="ttdoc">The configuration information returned by the WiredTiger configuration parsing functions in the WT_EX...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3512</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html_aa0ce7d30a32600e16824966c638ee45f"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html#aa0ce7d30a32600e16824966c638ee45f">WT_CONFIG_ITEM::str</a></div><div class="ttdeci">const char * str</div><div class="ttdoc">The value of a configuration string.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3523</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html_adff0f6e5a3f781f0228015e8336f1a14"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html#adff0f6e5a3f781f0228015e8336f1a14">WT_CONFIG_ITEM::len</a></div><div class="ttdeci">size_t len</div><div class="ttdoc">The number of bytes in the value referenced by str.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3526</div></div>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ex_encrypt_8c-example.html#a7">ex_encrypt.c</a>, <a class="el" href="nop_encrypt_8c-example.html#a6">nop_encrypt.c</a>, <a class="el" href="rotn_encrypt_8c-example.html#a6">rotn_encrypt.c</a>, and <a class="el" href="sodium_encrypt_8c-example.html#a7">sodium_encrypt.c</a>.</dd>
 </dl>
 
@@ -488,7 +488,7 @@ Public Attributes</h2></td></tr>
 <div class="line">          <a class="code hl_function" href="group__wt.html#ga512297da65ccc30ac91bf6adf95f043f">wiredtiger_config_parser_open</a>(NULL, config_string, strlen(config_string), &amp;parser));</div>
 <div class="line">        error_check(parser-&gt;<a class="code hl_function" href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a44eea5e27a4da10006ab444ee7cf00f3">close</a>(parser));</div>
 <div class="ttc" id="agroup__wt_html_ga512297da65ccc30ac91bf6adf95f043f"><div class="ttname"><a href="group__wt.html#ga512297da65ccc30ac91bf6adf95f043f">wiredtiger_config_parser_open</a></div><div class="ttdeci">int wiredtiger_config_parser_open(WT_SESSION *session, const char *config, size_t len, WT_CONFIG_PARSER **config_parserp)</div><div class="ttdoc">Create a handle that can be used to parse or create configuration strings compatible with WiredTiger ...</div></div>
-<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___p_a_r_s_e_r_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html">WT_CONFIG_PARSER</a></div><div class="ttdoc">A handle that can be used to search and traverse configuration strings compatible with WiredTiger API...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3646</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___p_a_r_s_e_r_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html">WT_CONFIG_PARSER</a></div><div class="ttdoc">A handle that can be used to search and traverse configuration strings compatible with WiredTiger API...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3639</div></div>
 <div class="ttc" id="astruct_w_t___c_o_n_f_i_g___p_a_r_s_e_r_html_a44eea5e27a4da10006ab444ee7cf00f3"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a44eea5e27a4da10006ab444ee7cf00f3">WT_CONFIG_PARSER::close</a></div><div class="ttdeci">int close(WT_CONFIG_PARSER *config_parser)</div><div class="ttdoc">Close the configuration scanner releasing any resources.</div></div>
 </div><!-- fragment --> 
 </div>

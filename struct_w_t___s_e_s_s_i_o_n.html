@@ -254,11 +254,11 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>app_metadata</code></td><td>application-owned metadata for this object.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>assert = (</code></td><td>enable enhanced checking.</td><td>a set of related configuration options defined below. </td></tr>
+<td><code>assert = (</code></td><td>enable enhanced timestamp checking with error messages and optional core dump.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>verify that timestamps should <code>always</code> or <code>never</code> be used on reads with this table. Verification should be set to <code>none</code> if mixed read use is allowed.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>check timestamps are <code>always</code> or <code>never</code> used on reads with this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check. Should be set to <code>none</code> if mixed read use is allowed.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;write_timestamp</code></td><td>verify that commit timestamps are used per the configured <code>write_timestamp_usage</code> option for this table.</td><td>a string, chosen from the following options: <code>"off"</code>, <code>"on"</code>; default <code>off</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160; write_timestamp</code></td><td>check timestamps are used consistently with the configured <code>write_timestamp_usage</code> option for this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check.</td><td>a string, chosen from the following options: <code>"off"</code>, <code>"on"</code>; default <code>off</code>. </td></tr>
 <tr>
 <td><code> )</code></td><td></td><td></td></tr>
 <tr>
@@ -276,9 +276,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>readonly</code></td><td>the file is read-only. All methods that may modify a file are disabled. See <a class="el" href="readonly.html">Database read-only mode</a> for more information.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
-<td><code>verbose</code></td><td>enable messages for various events. The choices are <code>write_timestamp</code> which adds verbose messages as described by <code>write_timestamp_usage</code>. Options are given as a list, such as <code>"verbose=[write_timestamp]"</code>.</td><td>a list, with values chosen from the following options: <code>"write_timestamp"</code>; default <code></code>[]. </td></tr>
-<tr>
-<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on modifications to the table. This option should be used in conjunction with the corresponding <code>write_timestamp</code> configuration under the <code>assert</code> and <code>verbose</code> options to provide logging and assertions for incorrect timestamp usage. The choices are <code>always</code> which ensures a timestamp is used for every operation on a table, <code>ordered</code> which ensures that once timestamps are used for a key, they are always used, and also that subsequent updates to each key must use increasing timestamps, <code>mixed_mode</code> is like <code>ordered</code> except that updates with no timestamp are allowed and have the effect of resetting the chain of updates once the transaction ID based snapshot is no longer relevant, <code>never</code> enforces that timestamps are never used for a table and <code>none</code> does not enforce any expectation on timestamp usage meaning that no log message or assertions will be produced regardless of the corresponding <code>assert</code> and <code>verbose</code> settings.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
+<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on modifications to the table. This option should be used in conjunction with the corresponding <code>write_timestamp</code> configuration under the <code>assert</code> option to provide logging and assertions for incorrect timestamp usage. The choices are <code>always</code> which ensures a timestamp is used for every operation on a table, <code>ordered</code> which ensures that once timestamps are used for a key, they are always used, and also that subsequent updates to each key must use increasing timestamps, <code>mixed_mode</code> is like <code>ordered</code> except that updates with no timestamp are allowed at any time, <code>never</code> enforces that timestamps are never used for a table and <code>none</code> does not enforce any expectation on timestamp usage meaning that no log message or assertions will be produced regardless of the corresponding <code>assert</code> setting. (The <code>key_consistent</code> choice is no longer supported, retained for backward compatibility.).</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"key_consistent"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -346,7 +344,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">    <span class="comment">/*</span></div>
 <div class="line"><span class="comment">     * Cursors remain open and may be used for multiple transactions.</span></div>
 <div class="line"><span class="comment">     */</span></div>
-<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3788</div></div>
+<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3781</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -355,7 +353,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <th>Name</th><th>Effect</th><th>Values </th></tr>
 <tr>
-<td><code>ignore_prepare</code></td><td>whether to ignore the updates by other prepared transactions as part of read operations of this transaction. When <code>true</code>, forces the transaction to be read-only. Use <code>force</code> to ignore prepared updates and permit writes (which can cause lost updates unless the application knows something about the relationship between prepared transactions and the updates that are ignoring them).</td><td>a string, chosen from the following options: <code>"false"</code>, <code>"force"</code>, <code>"true"</code>; default <code>false</code>. </td></tr>
+<td><code>ignore_prepare</code></td><td>whether to ignore the updates by other prepared transactions as part of read operations of this transaction. When <code>true</code>, forces the transaction to be read-only. Use <code>force</code> to ignore prepared updates and permit writes (see <a class="el" href="timestamp_prepare.html#timestamp_prepare_ignore_prepare">Configuring ignore_prepare</a> for more information).</td><td>a string, chosen from the following options: <code>"false"</code>, <code>"force"</code>, <code>"true"</code>; default <code>false</code>. </td></tr>
 <tr>
 <td><code>isolation</code></td><td>the isolation level for this transaction; defaults to the session's isolation level.</td><td>a string, chosen from the following options: <code>"read-uncommitted"</code>, <code>"read-committed"</code>, <code>"snapshot"</code>; default empty. </td></tr>
 <tr>
@@ -369,7 +367,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>roundup_timestamps = (</code></td><td>round up timestamps of the transaction. This setting alters the visibility expected in a transaction. See <a class="el" href="timestamp_roundup.html">Automatic timestamp rounding</a>.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;prepared</code></td><td>applicable only for prepared transactions. Indicates if the prepare timestamp and the commit timestamp of this transaction can be rounded up. If the prepare timestamp is less than the stable timestamp, the prepare timestamp will be rounded to the stable timestamp. If the commit timestamp is less than the prepare timestamp, the commit timestamp will be rounded up to the prepare timestamp.</td><td>a boolean flag; default <code>false</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;prepared</code></td><td>applicable only for prepared transactions, and intended only for special-purpose use. (See <a class="el" href="timestamp_roundup.html#timestamp_roundup_prepare">Replaying prepared transactions by rounding up the prepare timestamp</a>.) Allows the prepare timestamp and the commit timestamp of this transaction to be rounded up to be no older than the oldest timestamp, and allows violating the usual restriction that the prepare timestamp must be newer than the stable timestamp. Specifically: at transaction prepare, if the prepare timestamp is less than or equal to the oldest timestamp, the prepare timestamp will be rounded to the oldest timestamp. Subsequently, at commit time, if the commit timestamp is less than the (now rounded) prepare timestamp, the commit timestamp will be rounded up to it and thus to at least oldest. Neither timestamp will be checked against the stable timestamp.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
 <td><code>&#160;&#160;&#160;&#160;read</code></td><td>if the read timestamp is less than the oldest timestamp, the read timestamp will be rounded up to the oldest timestamp.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
@@ -597,7 +595,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>commit_timestamp</code></td><td>set the commit timestamp for the current transaction. The supplied value must not be older than the first commit timestamp already set for the current transaction, if any. The value must also not be older than the current oldest and stable timestamps. For prepared transactions, exactly one commit timestamp is required; it must not be older than the prepare timestamp. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. The supplied value must not be older than the commit timestamp set for the current transaction. The value must also not be older than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. The supplied value must not be older than the commit timestamp set for the current transaction. The value must also be newer than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 <tr>
 <td><code>operation_timeout_ms</code></td><td>when non-zero, a requested limit on the time taken to complete operations in this transaction. Time is measured in real time milliseconds from the start of each WiredTiger API call. There is no guarantee any operation will not take longer than this amount of time. If WiredTiger notices the limit has been exceeded, an operation may return a WT_ROLLBACK error. Default is to have no limit.</td><td>an integer greater than or equal to 1; default <code>0</code>. </td></tr>
 <tr>
@@ -716,11 +714,11 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>app_metadata</code></td><td>application-owned metadata for this object.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>assert = (</code></td><td>enable enhanced checking.</td><td>a set of related configuration options defined below. </td></tr>
+<td><code>assert = (</code></td><td>enable enhanced timestamp checking with error messages and optional core dump.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>verify that timestamps should <code>always</code> or <code>never</code> be used on reads with this table. Verification should be set to <code>none</code> if mixed read use is allowed.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>check timestamps are <code>always</code> or <code>never</code> used on reads with this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check. Should be set to <code>none</code> if mixed read use is allowed.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;write_timestamp</code></td><td>verify that commit timestamps are used per the configured <code>write_timestamp_usage</code> option for this table.</td><td>a string, chosen from the following options: <code>"off"</code>, <code>"on"</code>; default <code>off</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160; write_timestamp</code></td><td>check timestamps are used consistently with the configured <code>write_timestamp_usage</code> option for this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check.</td><td>a string, chosen from the following options: <code>"off"</code>, <code>"on"</code>; default <code>off</code>. </td></tr>
 <tr>
 <td><code> )</code></td><td></td><td></td></tr>
 <tr>
@@ -870,9 +868,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>value_format</code></td><td>the format of the data packed into value items. See <a class="el" href="schema.html#schema_format_types">Format types</a> for details. By default, the value_format is <code>'u'</code> and applications use a <a class="el" href="group__wt.html#struct_w_t___i_t_e_m" title="A raw item of data to be managed, including a pointer to the data and a length.">WT_ITEM</a> structure to manipulate raw byte arrays. Value items of type 't' are bitfields, and when configured with record number type keys, will be stored using a fixed-length store.</td><td>a format string; default <code>u</code>. </td></tr>
 <tr>
-<td><code>verbose</code></td><td>enable messages for various events. The choices are <code>write_timestamp</code> which adds verbose messages as described by <code>write_timestamp_usage</code>. Options are given as a list, such as <code>"verbose=[write_timestamp]"</code>.</td><td>a list, with values chosen from the following options: <code>"write_timestamp"</code>; default <code></code>[]. </td></tr>
-<tr>
-<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on modifications to the table. This option should be used in conjunction with the corresponding <code>write_timestamp</code> configuration under the <code>assert</code> and <code>verbose</code> options to provide logging and assertions for incorrect timestamp usage. The choices are <code>always</code> which ensures a timestamp is used for every operation on a table, <code>ordered</code> which ensures that once timestamps are used for a key, they are always used, and also that subsequent updates to each key must use increasing timestamps, <code>mixed_mode</code> is like <code>ordered</code> except that updates with no timestamp are allowed and have the effect of resetting the chain of updates once the transaction ID based snapshot is no longer relevant, <code>never</code> enforces that timestamps are never used for a table and <code>none</code> does not enforce any expectation on timestamp usage meaning that no log message or assertions will be produced regardless of the corresponding <code>assert</code> and <code>verbose</code> settings.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
+<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on modifications to the table. This option should be used in conjunction with the corresponding <code>write_timestamp</code> configuration under the <code>assert</code> option to provide logging and assertions for incorrect timestamp usage. The choices are <code>always</code> which ensures a timestamp is used for every operation on a table, <code>ordered</code> which ensures that once timestamps are used for a key, they are always used, and also that subsequent updates to each key must use increasing timestamps, <code>mixed_mode</code> is like <code>ordered</code> except that updates with no timestamp are allowed at any time, <code>never</code> enforces that timestamps are never used for a table and <code>none</code> does not enforce any expectation on timestamp usage meaning that no log message or assertions will be produced regardless of the corresponding <code>assert</code> setting. (The <code>key_consistent</code> choice is no longer supported, retained for backward compatibility.).</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"key_consistent"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -1006,7 +1002,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">          <span class="stringliteral">&quot;: country %s, year %&quot;</span> PRIu16 <span class="stringliteral">&quot;, population %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, country, year, population);</div>
 <div class="line">    }</div>
 <div class="line">    scan_end_check(ret == <a class="code hl_define" href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a>);</div>
-<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3808</div></div>
+<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3801</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -1366,7 +1362,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <th>Name</th><th>Effect</th><th>Values </th></tr>
 <tr>
-<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must not be older than the current stable timestamp. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must be newer than the current stable timestamp. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -1456,10 +1452,9 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 </div><div class="memdoc">
 
 <p>Reconfigure a session handle. </p>
+<p >Only configurations listed in the method arguments are modified, other configurations remain in their current state. This method additionally resets the cursors associated with the session. <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a578f0fbd8a83339f1f9c00e135f006e6" title="Reconfigure a session handle.">WT_SESSION::reconfigure</a> will fail if a transaction is in progress in the session.</p>
 <div class="fragment"><div class="line">    error_check(session-&gt;reconfigure(session, <span class="stringliteral">&quot;isolation=snapshot&quot;</span>));</div>
-</div><!-- fragment --><p ><a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a578f0fbd8a83339f1f9c00e135f006e6" title="Reconfigure a session handle.">WT_SESSION::reconfigure</a> will fail if a transaction is in progress in the session.</p>
-<p >All cursors are reset.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
     <tr><td class="paramname">config</td><td>configuration string, see <a class="el" href="config_strings.html">Configuration Strings</a>. Permitted values:<br  />
@@ -1562,7 +1557,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 </div><div class="memdoc">
 
 <p>Reset the session handle. </p>
-<p >This method resets all cursors associated with this session, discards cached resources and resets session statistics. The session can be re-used immediately after this call returns. If a transaction is running on this session, then this call takes no action and return an error.</p>
+<p >This method resets the cursors associated with the session, clears session statistics and discards cached resources. No session configurations are modified (or reset to their default values). <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a307800663ed211447a18c46863c28787" title="Reset the session handle.">WT_SESSION::reset</a> will fail if a transaction is in progress in the session.</p>
 <div class="fragment"><div class="line">        error_check(session-&gt;reset(session));</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1840,9 +1835,9 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>commit_timestamp</code></td><td>set the commit timestamp for the current transaction. The supplied value must not be older than the first commit timestamp already set for the current transaction, if any. The value must also not be older than the current oldest and stable timestamps. For prepared transactions, a commit timestamp is required for commit, must not be older than the prepare timestamp, can be set only once, and must not be set until after the transaction has successfully prepared. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. Can only be set once the current transaction has been prepared, and a commit timestamp has been set. The supplied value must not be older than the commit timestamp. The value must also not be older than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>durable_timestamp</code></td><td>set the durable timestamp for the current transaction. Required for the commit of a prepared transaction, and otherwise not permitted. Can only be set once the current transaction has been prepared, and a commit timestamp has been set. The supplied value must not be older than the commit timestamp. The value must also be newer than the current oldest and stable timestamps. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must not be older than the current stable timestamp. Can be set only once per transaction. Setting the prepare timestamp does not by itself prepare the transaction, but does oblige the application to eventually prepare the transaction before committing it. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
+<td><code>prepare_timestamp</code></td><td>set the prepare timestamp for the updates of the current transaction. The supplied value must not be older than any active read timestamps, and must be newer than the current stable timestamp. Can be set only once per transaction. Setting the prepare timestamp does not by itself prepare the transaction, but does oblige the application to eventually prepare the transaction before committing it. See <a class="el" href="timestamp_prepare.html">Using transaction prepare with timestamps</a>.</td><td>a string; default empty. </td></tr>
 <tr>
 <td><code>read_timestamp</code></td><td>read using the specified timestamp. The supplied value must not be older than the current oldest timestamp. This can only be set once for a transaction. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string; default empty. </td></tr>
 </table>

@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"tune_page_size_and_comp.html#table_compress":[0,3,57,2,0],
+"tune_read_only.html":[0,3,58],
+"tune_statistics.html":[0,3,44],
+"tune_system_buffer_cache.html":[0,3,59],
 "tune_system_buffer_cache.html#tuning_system_buffer_cache_direct_io":[0,3,59,0],
 "tune_system_buffer_cache.html#tuning_system_buffer_cache_os_cache_dirty_max":[0,3,59,1],
 "tune_system_buffer_cache.html#tuning_system_buffer_cache_os_cache_max":[0,3,59,2],
