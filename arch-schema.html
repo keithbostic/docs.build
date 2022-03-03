@@ -165,7 +165,7 @@ Create</h2>
 <p >The create schema operation is responsible for creating the underlying data objects on the filesystem and then creating required entries in the metadata. The API for this operation is <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a358ca4141d59c345f401c58501276bbb" title="Create a table, column group, index or file.">WT_SESSION::create</a>.</p>
 <h2><a class="anchor" id="schema_drop"></a>
 Drop</h2>
-<p ><a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#adf785ef53c16d9dcc77e22cc04c87b70" title="Drop (delete) an object.">WT_SESSION::drop</a> operation drops the specified <code>uri</code>. The method will delete all related files and metadata entries. It is possible to keep the underlying files by specifying <code>"remove_files=false"</code> in the config string.</p>
+<p ><a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#adf785ef53c16d9dcc77e22cc04c87b70" title="Drop (delete) a table.">WT_SESSION::drop</a> operation drops the specified <code>uri</code>. The method will delete all related files and metadata entries. It is possible to keep the underlying files by specifying <code>"remove_files=false"</code> in the config string.</p>
 <h2><a class="anchor" id="schema_rename"></a>
 Rename</h2>
 <p ><a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a1d24b02549009f78b7c6463da0247614" title="Rename an object.">WT_SESSION::rename</a> schema operation renames the underlying data objects on the filesystem and updates the metadata accordingly.</p>

@@ -92,12 +92,7 @@ $(document).ready(function(){initNavTree('timestamp_roundup.html',''); initResiz
   <div class="headertitle"><div class="title">Automatic timestamp rounding </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >Applications setting timestamps for a transaction have to comply with the constraints based on the global timestamp state. In order to be compliant with the constraints applications will need to query the global timestamp state and check their timestamps for compliance and adjust timestamps if required, and this creates obvious races with other threads. To reduce application burden, WiredTiger supports automatic timestamp rounding in some scenarios.</p>
-<h1><a class="anchor" id="timestamp_roundup_read"></a>
-Rounding up the read timestamp</h1>
-<p >Applications can configure <code>roundup_timestamps=(prepared=true,read=true)</code> with the <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a7e26b16b26b5870498752322fad790bf" title="Start a transaction in this session.">WT_SESSION::begin_transaction</a> method.</p>
-<p >Configuring <code>roundup_timestamps=(read=true)</code> causes the read timestamp to be rounded up to the oldest timestamp. If the read timestamp is greater than the oldest timestamp no change will be made.</p>
-<h1><a class="anchor" id="timestamp_roundup_prepare"></a>
+<div class="textblock"><h1><a class="anchor" id="timestamp_roundup_prepare"></a>
 Replaying prepared transactions by rounding up the prepare timestamp</h1>
 <p >It is possible for a system crash to cause a prepared transaction to be rolled back. Because the durable timestamp of a transaction is permitted to be later than its commit timestamp, it is even possible for a system crash to cause a prepared and committed transaction to be rolled back. Part of the purpose of the timestamp interface is to allow such transactions to be replayed at the same time during an application-level recovery phase.</p>
 <p >Under ordinary circumstances this is purely an application concern. However, because it is also allowed for the stable timestamp to move forward after a transaction prepares, strict enforcement of the timestamping rules can make replaying prepared transactions at the same time impossible.</p>
