@@ -11,5 +11,6 @@ var searchData=
   ['decompress_8',['decompress',['../struct_w_t___c_o_m_p_r_e_s_s_o_r.html#a12e35ffbbe63b041c0571fb622b7f9da',1,'WT_COMPRESSOR']]],
   ['decrypt_9',['decrypt',['../struct_w_t___e_n_c_r_y_p_t_o_r.html#abad5447ebeb99d06b9024df435cffc26',1,'WT_ENCRYPTOR']]],
   ['drop_10',['drop',['../struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a4569fa21343c2681357dedb4dd5facc1',1,'WT_DATA_SOURCE::drop()'],['../struct_w_t___s_e_s_s_i_o_n.html#adf785ef53c16d9dcc77e22cc04c87b70',1,'WT_SESSION::drop()']]],
-  ['dump_20formats_11',['Dump Formats',['../dump_formats.html',1,'command_line']]]
+  ['dump_20formats_11',['Dump Formats',['../dump_formats.html',1,'command_line']]],
+  ['durability_20overview_12',['Durability overview',['../durability_overview.html',1,'programming']]]
 ];

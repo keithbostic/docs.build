@@ -206,7 +206,7 @@ Public Member Functions</h2></td></tr>
 <p >The application must first implement the <a class="el" href="struct_w_t___c_o_l_l_a_t_o_r.html" title="The interface implemented by applications to provide custom ordering of records.">WT_COLLATOR</a> interface and then register the implementation with WiredTiger:</p>
 <div class="fragment"><div class="line">    <span class="keyword">static</span> <a class="code hl_struct" href="struct_w_t___c_o_l_l_a_t_o_r.html">WT_COLLATOR</a> my_collator = {my_compare, NULL, NULL};</div>
 <div class="line">    error_check(conn-&gt;add_collator(conn, <span class="stringliteral">&quot;my_collator&quot;</span>, &amp;my_collator, NULL));</div>
-<div class="ttc" id="astruct_w_t___c_o_l_l_a_t_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_l_l_a_t_o_r.html">WT_COLLATOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom ordering of records.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3883</div></div>
+<div class="ttc" id="astruct_w_t___c_o_l_l_a_t_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_l_l_a_t_o_r.html">WT_COLLATOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom ordering of records.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3873</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">connection</td><td>the connection handle </td></tr>
@@ -271,7 +271,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nop_calls; <span class="comment">/* Count of calls */</span></div>
 <div class="line"> </div>
 <div class="line">} NOP_COMPRESSOR;</div>
-<div class="ttc" id="astruct_w_t___c_o_m_p_r_e_s_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_m_p_r_e_s_s_o_r.html">WT_COMPRESSOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom compression.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3936</div></div>
+<div class="ttc" id="astruct_w_t___c_o_m_p_r_e_s_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_o_m_p_r_e_s_s_o_r.html">WT_COMPRESSOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom compression.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3926</div></div>
 <div class="ttc" id="astruct_w_t___e_x_t_e_n_s_i_o_n___a_p_i_html"><div class="ttname"><a href="struct_w_t___e_x_t_e_n_s_i_o_n___a_p_i.html">WT_EXTENSION_API</a></div><div class="ttdoc">Table of WiredTiger extension methods.</div><div class="ttdef"><b>Definition:</b> wiredtiger_ext.h:58</div></div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> * wiredtiger_extension_init --</span></div>
@@ -310,8 +310,8 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> (ret);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__wt__ext_html_ga5ed14c916d5dcfe0e81aea9d9ccb7fe3"><div class="ttname"><a href="group__wt__ext.html#ga5ed14c916d5dcfe0e81aea9d9ccb7fe3">wiredtiger_extension_init</a></div><div class="ttdeci">int wiredtiger_extension_init(WT_CONNECTION *connection, WT_CONFIG_ARG *config)</div><div class="ttdoc">Entry point to an extension, called when the extension is loaded.</div></div>
-<div class="ttc" id="agroup__wt__ext_html_ga6fa5797cf581d18dc843e07333a497e4"><div class="ttname"><a href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a></div><div class="ttdeci">struct WT_CONFIG_ARG WT_CONFIG_ARG</div><div class="ttdoc">A configuration object passed to some extension interfaces.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3869</div></div>
-<div class="ttc" id="astruct_w_t___c_o_n_n_e_c_t_i_o_n_html"><div class="ttname"><a href="struct_w_t___c_o_n_n_e_c_t_i_o_n.html">WT_CONNECTION</a></div><div class="ttdoc">A connection to a WiredTiger database.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:2029</div></div>
+<div class="ttc" id="agroup__wt__ext_html_ga6fa5797cf581d18dc843e07333a497e4"><div class="ttname"><a href="group__wt__ext.html#ga6fa5797cf581d18dc843e07333a497e4">WT_CONFIG_ARG</a></div><div class="ttdeci">struct WT_CONFIG_ARG WT_CONFIG_ARG</div><div class="ttdoc">A configuration object passed to some extension interfaces.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3859</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_n_e_c_t_i_o_n_html"><div class="ttname"><a href="struct_w_t___c_o_n_n_e_c_t_i_o_n.html">WT_CONNECTION</a></div><div class="ttdoc">A connection to a WiredTiger database.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:2012</div></div>
 <div class="ttc" id="astruct_w_t___c_o_n_n_e_c_t_i_o_n_html_a4f26bfa799ae5e72b536ac93d6200783"><div class="ttname"><a href="struct_w_t___c_o_n_n_e_c_t_i_o_n.html#a4f26bfa799ae5e72b536ac93d6200783">WT_CONNECTION::add_compressor</a></div><div class="ttdeci">int add_compressor(WT_CONNECTION *connection, const char *name, WT_COMPRESSOR *compressor, const char *config)</div><div class="ttdoc">Add a compression function.</div></div>
 <div class="ttc" id="astruct_w_t___c_o_n_n_e_c_t_i_o_n_html_a5c7aee460118e8d521ea80b9fcc2d6d1"><div class="ttname"><a href="struct_w_t___c_o_n_n_e_c_t_i_o_n.html#a5c7aee460118e8d521ea80b9fcc2d6d1">WT_CONNECTION::get_extension_api</a></div><div class="ttdeci">WT_EXTENSION_API * get_extension_api(WT_CONNECTION *wt_conn)</div><div class="ttdoc">Return a reference to the WiredTiger extension functions.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -372,7 +372,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">          my_rename, my_salvage, my_size, my_truncate, my_range_truncate, my_verify, my_checkpoint,</div>
 <div class="line">          my_terminate, my_lsm_pre_merge};</div>
 <div class="line">        error_check(conn-&gt;add_data_source(conn, <span class="stringliteral">&quot;dsrc:&quot;</span>, &amp;my_dsrc, NULL));</div>
-<div class="ttc" id="astruct_w_t___d_a_t_a___s_o_u_r_c_e_html"><div class="ttname"><a href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html">WT_DATA_SOURCE</a></div><div class="ttdoc">Applications can extend WiredTiger by providing new implementations of the WT_DATA_SOURCE class.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4085</div></div>
+<div class="ttc" id="astruct_w_t___d_a_t_a___s_o_u_r_c_e_html"><div class="ttname"><a href="struct_w_t___d_a_t_a___s_o_u_r_c_e.html">WT_DATA_SOURCE</a></div><div class="ttdoc">Applications can extend WiredTiger by providing new implementations of the WT_DATA_SOURCE class.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4075</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">connection</td><td>the connection handle </td></tr>
@@ -435,7 +435,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nop_calls; <span class="comment">/* Count of calls */</span></div>
 <div class="line"> </div>
 <div class="line">} NOP_ENCRYPTOR;</div>
-<div class="ttc" id="astruct_w_t___e_n_c_r_y_p_t_o_r_html"><div class="ttname"><a href="struct_w_t___e_n_c_r_y_p_t_o_r.html">WT_ENCRYPTOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom encryption.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4223</div></div>
+<div class="ttc" id="astruct_w_t___e_n_c_r_y_p_t_o_r_html"><div class="ttname"><a href="struct_w_t___e_n_c_r_y_p_t_o_r.html">WT_ENCRYPTOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom encryption.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4213</div></div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> * wiredtiger_extension_init --</span></div>
 <div class="line"><span class="comment"> *     A simple shared library encryption example.</span></div>
@@ -532,7 +532,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">    <span class="keyword">static</span> <a class="code hl_struct" href="struct_w_t___e_x_t_r_a_c_t_o_r.html">WT_EXTRACTOR</a> my_extractor = {my_extract, NULL, NULL};</div>
 <div class="line"> </div>
 <div class="line">    error_check(conn-&gt;add_extractor(conn, <span class="stringliteral">&quot;my_extractor&quot;</span>, &amp;my_extractor, NULL));</div>
-<div class="ttc" id="astruct_w_t___e_x_t_r_a_c_t_o_r_html"><div class="ttname"><a href="struct_w_t___e_x_t_r_a_c_t_o_r.html">WT_EXTRACTOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom extraction of index keys or column group ...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4381</div></div>
+<div class="ttc" id="astruct_w_t___e_x_t_r_a_c_t_o_r_html"><div class="ttname"><a href="struct_w_t___e_x_t_r_a_c_t_o_r.html">WT_EXTRACTOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom extraction of index keys or column group ...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4371</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">connection</td><td>the connection handle </td></tr>
@@ -882,7 +882,7 @@ Public Member Functions</h2></td></tr>
 <p>Open a session. </p>
 <div class="fragment"><div class="line">        <a class="code hl_struct" href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a> *session;</div>
 <div class="line">        error_check(conn-&gt;open_session(conn, NULL, NULL, &amp;session));</div>
-<div class="ttc" id="astruct_w_t___s_e_s_s_i_o_n_html"><div class="ttname"><a href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a></div><div class="ttdoc">All data operations are performed in the context of a WT_SESSION.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:756</div></div>
+<div class="ttc" id="astruct_w_t___s_e_s_s_i_o_n_html"><div class="ttname"><a href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a></div><div class="ttdoc">All data operations are performed in the context of a WT_SESSION.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:744</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">connection</td><td>the connection handle </td></tr>
@@ -1069,17 +1069,19 @@ Public Member Functions</h2></td></tr>
 <tr>
 <td><code>&#160;&#160;&#160;&#160;eviction</code></td><td>if true, modify internal algorithms to change skew to force history store eviction to happen more aggressively. This includes but is not limited to not skewing newest, not favoring leaf pages, and modifying the eviction score mechanism.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160; log_retention</code></td><td>adjust log removal to retain at least this number of log files, ignored if set to 0. (Warning: this option can remove log files required for recovery if no checkpoints have yet been done and the number of log files exceeds the configured value. As WiredTiger cannot detect the difference between a system that has not yet checkpointed and one that will never checkpoint, it might discard log files before any checkpoint is done.).</td><td>an integer between 0 and 1024; default <code>0</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160; flush_checkpoint</code></td><td>if true, call a system wide checkpoint immediately after a flush_tier completes to force objects out to disk so that a flush_tier can work single-threaded.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160; realloc_exact</code></td><td>if true, reallocation of memory will only provide the exact amount requested. This will help with spotting memory allocation issues more easily.</td><td>a boolean flag; default <code>false</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;log_retention</code></td><td>adjust log removal to retain at least this number of log files, ignored if set to 0. (Warning: this option can remove log files required for recovery if no checkpoints have yet been done and the number of log files exceeds the configured value. As WiredTiger cannot detect the difference between a system that has not yet checkpointed and one that will never checkpoint, it might discard log files before any checkpoint is done.).</td><td>an integer between 0 and 1024; default <code>0</code>. </td></tr>
+<tr>
+<td><code>&#160;&#160;&#160;&#160;realloc_exact</code></td><td>if true, reallocation of memory will only provide the exact amount requested. This will help with spotting memory allocation issues more easily.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
 <td><code>&#160;&#160;&#160;&#160;rollback_error</code></td><td>return a WT_ROLLBACK error from a transaction operation about every Nth operation to simulate a collision.</td><td>an integer between 0 and 10M; default <code>0</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160; slow_checkpoint</code></td><td>if true, slow down checkpoint creation by slowing down internal page processing.</td><td>a boolean flag; default <code>false</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;slow_checkpoint</code></td><td>if true, slow down checkpoint creation by slowing down internal page processing.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160; table_logging</code></td><td>if true, write transaction related information to the log for all operations, even operations for tables with logging turned off. This additional logging information is intended for debugging and is informational only, that is, it is ignored during recovery.</td><td>a boolean flag; default <code>false</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;table_logging</code></td><td>if true, write transaction related information to the log for all operations, even operations for tables with logging turned off. This additional logging information is intended for debugging and is informational only, that is, it is ignored during recovery.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160; update_restore_evict</code></td><td>if true, control all dirty page evictions through forcing update restore eviction.</td><td>a boolean flag; default <code>false</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;update_restore_evict</code></td><td>if true, control all dirty page evictions through forcing update restore eviction.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
 <td><code> )</code></td><td></td><td></td></tr>
 <tr>
@@ -1360,7 +1362,7 @@ Public Member Functions</h2></td></tr>
 <tr>
 <td><code>oldest_timestamp</code></td><td>future commits and queries will be no earlier than the specified timestamp. Values must be monotonically increasing, any attempt to set the value to older than the current is silently ignored. The value must not be newer than the current stable timestamp. See <a class="el" href="timestamp_global_api.html">Managing the global timestamp state</a>.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>stable_timestamp</code></td><td>checkpoints will not include commits that are newer than the specified timestamp in tables configured with <code>log=</code>(enabled=false). Values must be monotonically increasing, any attempt to set the value to older than the current is silently ignored. The value must not be older than the current oldest timestamp. See <a class="el" href="timestamp_global_api.html">Managing the global timestamp state</a>.</td><td>a string; default empty. </td></tr>
+<td><code>stable_timestamp</code></td><td>checkpoints will not include commits that are newer than the specified timestamp in tables configured with <code>"log=(enabled=false)"</code>. Values must be monotonically increasing, any attempt to set the value to older than the current is silently ignored. The value must not be older than the current oldest timestamp. See <a class="el" href="timestamp_global_api.html">Managing the global timestamp state</a>.</td><td>a string; default empty. </td></tr>
 </table>
 </td></tr>
   </table>

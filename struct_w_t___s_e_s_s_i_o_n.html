@@ -344,7 +344,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">    <span class="comment">/*</span></div>
 <div class="line"><span class="comment">     * Cursors remain open and may be used for multiple transactions.</span></div>
 <div class="line"><span class="comment">     */</span></div>
-<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3783</div></div>
+<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3773</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -412,7 +412,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 </div><div class="memdoc">
 
 <p>Write a transactionally consistent snapshot of a database or set of individual objects. </p>
-<p >When timestamps are not in use, the checkpoint includes all transactions committed before the checkpoint starts. When timestamps are in use and the checkpoint runs with <code>use_timestamp=true</code> (the default), updates committed with a timestamp after the <code>stable</code> timestamp, in tables configured for checkpoint-level durability, are not included in the checkpoint. Updates committed in tables configured for commit-level durability are always included in the checkpoint. See <a class="el" href="checkpoint.html">Checkpoint durability</a> and <a class="el" href="durability.html">Commit-level durability</a> for more information.</p>
+<p >When timestamps are not in use, the checkpoint includes all transactions committed before the checkpoint starts. When timestamps are in use and the checkpoint runs with <code>use_timestamp=true</code> (the default), updates committed with a timestamp after the <code>stable</code> timestamp, in tables configured for checkpoint-level durability, are not included in the checkpoint. Updates committed in tables configured for commit-level durability are always included in the checkpoint. See <a class="el" href="durability_checkpoint.html">Checkpoint-level durability</a> and <a class="el" href="durability_log.html">Commit-level durability</a> for more information.</p>
 <p >Calling the checkpoint method multiple times serializes the checkpoints, new checkpoint calls wait for running checkpoint calls to complete.</p>
 <p >Existing named checkpoints may optionally be discarded.</p>
 <p >This method must not be called on a session with an active transaction.<br  />
@@ -470,9 +470,9 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>name</code></td><td>if set, specify a name for the checkpoint (note that checkpoints including LSM trees may not be named).</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>target</code></td><td>if non-empty, checkpoint the list of objects. Checkpointing a list of objects separately from a database-wide checkpoint can lead to data inconsistencies, see <a class="el" href="checkpoint.html#checkpoint_target">Checkpointing specific objects</a> for more information.</td><td>a list of strings; default empty. </td></tr>
+<td><code>target</code></td><td>if non-empty, checkpoint the list of objects. Checkpointing a list of objects separately from a database-wide checkpoint can lead to data inconsistencies, see <a class="el" href="durability_checkpoint.html#checkpoint_target">Checkpointing specific objects</a> for more information.</td><td>a list of strings; default empty. </td></tr>
 <tr>
-<td><code>use_timestamp</code></td><td>if true (the default), create the checkpoint as of the last stable timestamp if timestamps are in use, or all current updates if there is no stable timestamp set. If false, this option generates a checkpoint with all updates including those later than the timestamp.</td><td>a boolean flag; default <code>true</code>. </td></tr>
+<td><code>use_timestamp</code></td><td>if true (the default), create the checkpoint as of the last stable timestamp if timestamps are in use, or with all committed updates if there is no stable timestamp set. If false, always generate a checkpoint with all committed updates, ignoring any stable timestamp.</td><td>a boolean flag; default <code>true</code>. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -1002,7 +1002,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">          <span class="stringliteral">&quot;: country %s, year %&quot;</span> PRIu16 <span class="stringliteral">&quot;, population %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, country, year, population);</div>
 <div class="line">    }</div>
 <div class="line">    scan_end_check(ret == <a class="code hl_define" href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a>);</div>
-<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3804</div></div>
+<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3794</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -1949,7 +1949,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">                error_check(stop-&gt;<a class="code hl_function" href="struct_w_t___c_u_r_s_o_r.html#a7e25b2ced2cf3ec68bd5429bf921c79f">search</a>(stop));</div>
 <div class="line"> </div>
 <div class="line">                error_check(session-&gt;truncate(session, NULL, start, stop, NULL));</div>
-<div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a></div><div class="ttdoc">A WT_CURSOR handle is the interface to a cursor.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:211</div></div>
+<div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a></div><div class="ttdoc">A WT_CURSOR handle is the interface to a cursor.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:199</div></div>
 <div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html_a7e25b2ced2cf3ec68bd5429bf921c79f"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html#a7e25b2ced2cf3ec68bd5429bf921c79f">WT_CURSOR::search</a></div><div class="ttdeci">int search(WT_CURSOR *cursor)</div><div class="ttdoc">Return the record matching the key.</div></div>
 <div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html_ad1088d719df40babc1f57d086691ebdc"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html#ad1088d719df40babc1f57d086691ebdc">WT_CURSOR::set_key</a></div><div class="ttdeci">void set_key(WT_CURSOR *cursor,...)</div><div class="ttdoc">Set the key for the next operation.</div></div>
 </div><!-- fragment --><p >When a range truncate is in progress, and another transaction inserts a key into that range, the behavior is not well defined - a conflict may be detected or both transactions may be permitted to commit. If they do commit, and if there is a crash and recovery runs, the result may be different than what was in cache before the crash.</p>

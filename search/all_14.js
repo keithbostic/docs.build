@@ -14,8 +14,7 @@ var searchData=
   ['transactions_11',['Transactions',['../arch-transaction.html',1,'arch-toc-fundamentals']]],
   ['truncate_12',['truncate',['../struct_w_t___d_a_t_a___s_o_u_r_c_e.html#af7747944c269ade792fda0bb381624c4',1,'WT_DATA_SOURCE::truncate()'],['../struct_w_t___s_e_s_s_i_o_n.html#ac2bad195e24710d52d730fe3a7c1756a',1,'WT_SESSION::truncate()']]],
   ['tuning_20page_20size_20and_20compression_13',['Tuning page size and compression',['../tune_page_size_and_comp.html',1,'programming']]],
-  ['tutorial_3a_20durability_20models_14',['Tutorial: durability models',['../explain_durability.html',1,'programming']]],
-  ['tutorial_3a_20isolation_20levels_15',['Tutorial: isolation levels',['../explain_isolation.html',1,'programming']]],
-  ['tutorial_3a_20transactions_20and_20acid_20properties_16',['Tutorial: transactions and ACID properties',['../explain_acid.html',1,'programming']]],
-  ['type_17',['type',['../struct_w_t___c_o_n_f_i_g___i_t_e_m.html#a522b293b25db519b105556273f9f84c9',1,'WT_CONFIG_ITEM']]]
+  ['tutorial_3a_20isolation_20levels_14',['Tutorial: isolation levels',['../explain_isolation.html',1,'programming']]],
+  ['tutorial_3a_20transactions_20and_20acid_20properties_15',['Tutorial: transactions and ACID properties',['../explain_acid.html',1,'programming']]],
+  ['type_16',['type',['../struct_w_t___c_o_n_f_i_g___i_t_e_m.html#a522b293b25db519b105556273f9f84c9',1,'WT_CONFIG_ITEM']]]
 ];

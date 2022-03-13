@@ -10,7 +10,6 @@ var searchData=
   ['transactional_20applications_7',['Transactional applications',['../transactions.html',1,'programming']]],
   ['transactions_8',['Transactions',['../arch-transaction.html',1,'arch-toc-fundamentals']]],
   ['tuning_20page_20size_20and_20compression_9',['Tuning page size and compression',['../tune_page_size_and_comp.html',1,'programming']]],
-  ['tutorial_3a_20durability_20models_10',['Tutorial: durability models',['../explain_durability.html',1,'programming']]],
-  ['tutorial_3a_20isolation_20levels_11',['Tutorial: isolation levels',['../explain_isolation.html',1,'programming']]],
-  ['tutorial_3a_20transactions_20and_20acid_20properties_12',['Tutorial: transactions and ACID properties',['../explain_acid.html',1,'programming']]]
+  ['tutorial_3a_20isolation_20levels_10',['Tutorial: isolation levels',['../explain_isolation.html',1,'programming']]],
+  ['tutorial_3a_20transactions_20and_20acid_20properties_11',['Tutorial: transactions and ACID properties',['../explain_acid.html',1,'programming']]]
 ];

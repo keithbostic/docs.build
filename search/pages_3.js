@@ -7,5 +7,6 @@ var searchData=
   ['database_20configuration_4',['Database Configuration',['../database_config.html',1,'admin']]],
   ['database_20home_20directory_5',['Database Home Directory',['../home.html',1,'admin']]],
   ['database_20read_2donly_20mode_6',['Database read-only mode',['../readonly.html',1,'programming']]],
-  ['dump_20formats_7',['Dump Formats',['../dump_formats.html',1,'command_line']]]
+  ['dump_20formats_7',['Dump Formats',['../dump_formats.html',1,'command_line']]],
+  ['durability_20overview_8',['Durability overview',['../durability_overview.html',1,'programming']]]
 ];
