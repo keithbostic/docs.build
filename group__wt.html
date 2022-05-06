@@ -681,22 +681,22 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_EMPTY_SCORE</b></td></tr>
 <tr class="memdesc:gac102bdcb189a5e5444e7f3d9b6dcd6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction empty score <br /></td></tr>
 <tr class="separator:gac102bdcb189a5e5444e7f3d9b6dcd6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1c94ae7656e00d3b2dc08b3a76521638"><td class="memItemLeft" align="right" valign="top"><a id="ga1c94ae7656e00d3b2dc08b3a76521638" name="ga1c94ae7656e00d3b2dc08b3a76521638"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_1</b></td></tr>
-<tr class="memdesc:ga1c94ae7656e00d3b2dc08b3a76521638"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting an out of order on disk value behind the last update on the chain <br /></td></tr>
-<tr class="separator:ga1c94ae7656e00d3b2dc08b3a76521638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga926afbd07edf92fb8f5be544c5640463"><td class="memItemLeft" align="right" valign="top"><a id="ga926afbd07edf92fb8f5be544c5640463" name="ga926afbd07edf92fb8f5be544c5640463"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_2</b></td></tr>
-<tr class="memdesc:ga926afbd07edf92fb8f5be544c5640463"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting an out of order tombstone ahead of the selected on disk update <br /></td></tr>
-<tr class="separator:ga926afbd07edf92fb8f5be544c5640463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba57ceab1754d82524cb3d2f9f33296b"><td class="memItemLeft" align="right" valign="top"><a id="gaba57ceab1754d82524cb3d2f9f33296b" name="gaba57ceab1754d82524cb3d2f9f33296b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_3</b></td></tr>
-<tr class="memdesc:gaba57ceab1754d82524cb3d2f9f33296b"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting an out of order tombstone ahead of the selected on disk update after validating the update chain <br /></td></tr>
-<tr class="separator:gaba57ceab1754d82524cb3d2f9f33296b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf28a544870259a4d6a265d789681f461"><td class="memItemLeft" align="right" valign="top"><a id="gaf28a544870259a4d6a265d789681f461" name="gaf28a544870259a4d6a265d789681f461"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_4</b></td></tr>
-<tr class="memdesc:gaf28a544870259a4d6a265d789681f461"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting out of order timestamps on the update chain after the selected on disk update <br /></td></tr>
-<tr class="separator:gaf28a544870259a4d6a265d789681f461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3eb8e6af34e7b6cd79aa7ef49f95d37"><td class="memItemLeft" align="right" valign="top"><a id="gab3eb8e6af34e7b6cd79aa7ef49f95d37" name="gab3eb8e6af34e7b6cd79aa7ef49f95d37"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_1</b></td></tr>
+<tr class="memdesc:gab3eb8e6af34e7b6cd79aa7ef49f95d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting a disk value without a timestamp behind the last update on the chain <br /></td></tr>
+<tr class="separator:gab3eb8e6af34e7b6cd79aa7ef49f95d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafefc4838f174eb77c2bcb8c81577ae4b"><td class="memItemLeft" align="right" valign="top"><a id="gafefc4838f174eb77c2bcb8c81577ae4b" name="gafefc4838f174eb77c2bcb8c81577ae4b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_2</b></td></tr>
+<tr class="memdesc:gafefc4838f174eb77c2bcb8c81577ae4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting a tombstone without a timestamp ahead of the selected on disk update <br /></td></tr>
+<tr class="separator:gafefc4838f174eb77c2bcb8c81577ae4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffdb5662c9c6efde5f4b2a627d08bc4e"><td class="memItemLeft" align="right" valign="top"><a id="gaffdb5662c9c6efde5f4b2a627d08bc4e" name="gaffdb5662c9c6efde5f4b2a627d08bc4e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_3</b></td></tr>
+<tr class="memdesc:gaffdb5662c9c6efde5f4b2a627d08bc4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting a tombstone without a timestamp ahead of the selected on disk update after validating the update chain <br /></td></tr>
+<tr class="separator:gaffdb5662c9c6efde5f4b2a627d08bc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga304ec137b76ee71fbf3cb1c77d058a7d"><td class="memItemLeft" align="right" valign="top"><a id="ga304ec137b76ee71fbf3cb1c77d058a7d" name="ga304ec137b76ee71fbf3cb1c77d058a7d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_4</b></td></tr>
+<tr class="memdesc:ga304ec137b76ee71fbf3cb1c77d058a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting update chain entries without timestamps after the selected on disk update <br /></td></tr>
+<tr class="separator:ga304ec137b76ee71fbf3cb1c77d058a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6708fee683eedc5595b1ad2cd12a7269"><td class="memItemLeft" align="right" valign="top"><a id="ga6708fee683eedc5595b1ad2cd12a7269" name="ga6708fee683eedc5595b1ad2cd12a7269"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_WALK_PASSES</b></td></tr>
 <tr class="memdesc:ga6708fee683eedc5595b1ad2cd12a7269"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction passes of a file <br /></td></tr>
@@ -913,14 +913,6 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ONDISK</b></td></tr>
 <tr class="memdesc:gaef5e9f0bdc610ec78c81166232ef99e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table on-disk size <br /></td></tr>
 <tr class="separator:gaef5e9f0bdc610ec78c81166232ef99e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga096e57bb11644cb4f600141fdefb1614"><td class="memItemLeft" align="right" valign="top"><a id="ga096e57bb11644cb4f600141fdefb1614" name="ga096e57bb11644cb4f600141fdefb1614"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ORDER_LOSE_DURABLE_TIMESTAMP</b></td></tr>
-<tr class="memdesc:ga096e57bb11644cb4f600141fdefb1614"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table out-of-order resolved updates that lose their durable timestamp <br /></td></tr>
-<tr class="separator:ga096e57bb11644cb4f600141fdefb1614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd89d2b5dc963f876b79405802e378c9"><td class="memItemLeft" align="right" valign="top"><a id="gabd89d2b5dc963f876b79405802e378c9" name="gabd89d2b5dc963f876b79405802e378c9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ORDER_REINSERT</b></td></tr>
-<tr class="memdesc:gabd89d2b5dc963f876b79405802e378c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table out-of-order updates that were fixed up by reinserting with the fixed timestamp <br /></td></tr>
-<tr class="separator:gabd89d2b5dc963f876b79405802e378c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga78209aa1be24d3631701ece8b1a31dea"><td class="memItemLeft" align="right" valign="top"><a id="ga78209aa1be24d3631701ece8b1a31dea" name="ga78209aa1be24d3631701ece8b1a31dea"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_READ</b></td></tr>
 <tr class="memdesc:ga78209aa1be24d3631701ece8b1a31dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table reads <br /></td></tr>
@@ -933,6 +925,10 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_READ_SQUASH</b></td></tr>
 <tr class="memdesc:ga892c078b9060fd55350c078e8391063a"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table reads requiring squashed modifies <br /></td></tr>
 <tr class="separator:ga892c078b9060fd55350c078e8391063a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga096e57bb11644cb4f600141fdefb1614"><td class="memItemLeft" align="right" valign="top"><a id="ga096e57bb11644cb4f600141fdefb1614" name="ga096e57bb11644cb4f600141fdefb1614"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ORDER_LOSE_DURABLE_TIMESTAMP</b></td></tr>
+<tr class="memdesc:ga096e57bb11644cb4f600141fdefb1614"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table resolved updates without timestamps that lose their durable timestamp <br /></td></tr>
+<tr class="separator:ga096e57bb11644cb4f600141fdefb1614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac431acdaf93eddd8f6ce9809460055c6"><td class="memItemLeft" align="right" valign="top"><a id="gac431acdaf93eddd8f6ce9809460055c6" name="gac431acdaf93eddd8f6ce9809460055c6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_KEY_TRUNCATE_RTS_UNSTABLE</b></td></tr>
 <tr class="memdesc:gac431acdaf93eddd8f6ce9809460055c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation by rollback to stable to remove an unstable update <br /></td></tr>
@@ -945,14 +941,18 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_KEY_TRUNCATE</b></td></tr>
 <tr class="memdesc:gaeb77d19748c9a8d8ad6a490b0e08e6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove an update <br /></td></tr>
 <tr class="separator:gaeb77d19748c9a8d8ad6a490b0e08e6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59c334734c52660ffd64a718aee0a5ae"><td class="memItemLeft" align="right" valign="top"><a id="ga59c334734c52660ffd64a718aee0a5ae" name="ga59c334734c52660ffd64a718aee0a5ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ORDER_REMOVE</b></td></tr>
+<tr class="memdesc:ga59c334734c52660ffd64a718aee0a5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove range of updates due to an update without a timestamp on data page <br /></td></tr>
+<tr class="separator:ga59c334734c52660ffd64a718aee0a5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga580b3ceeaa1103892fb42a68f4f2166c"><td class="memItemLeft" align="right" valign="top"><a id="ga580b3ceeaa1103892fb42a68f4f2166c" name="ga580b3ceeaa1103892fb42a68f4f2166c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_KEY_TRUNCATE_ONPAGE_REMOVAL</b></td></tr>
 <tr class="memdesc:ga580b3ceeaa1103892fb42a68f4f2166c"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove range of updates due to key being removed from the data page during reconciliation <br /></td></tr>
 <tr class="separator:ga580b3ceeaa1103892fb42a68f4f2166c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga59c334734c52660ffd64a718aee0a5ae"><td class="memItemLeft" align="right" valign="top"><a id="ga59c334734c52660ffd64a718aee0a5ae" name="ga59c334734c52660ffd64a718aee0a5ae"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ORDER_REMOVE</b></td></tr>
-<tr class="memdesc:ga59c334734c52660ffd64a718aee0a5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove range of updates due to out-of-order timestamp update on data page <br /></td></tr>
-<tr class="separator:ga59c334734c52660ffd64a718aee0a5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd89d2b5dc963f876b79405802e378c9"><td class="memItemLeft" align="right" valign="top"><a id="gabd89d2b5dc963f876b79405802e378c9" name="gabd89d2b5dc963f876b79405802e378c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_ORDER_REINSERT</b></td></tr>
+<tr class="memdesc:gabd89d2b5dc963f876b79405802e378c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table updates without timestamps fixed up by reinserting with the fixed timestamp <br /></td></tr>
+<tr class="separator:gabd89d2b5dc963f876b79405802e378c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaaa6c5d9d3b755ec4dbbb64ce5594984"><td class="memItemLeft" align="right" valign="top"><a id="gaaaa6c5d9d3b755ec4dbbb64ce5594984" name="gaaaa6c5d9d3b755ec4dbbb64ce5594984"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_HS_WRITE_SQUASH</b></td></tr>
 <tr class="memdesc:gaaaa6c5d9d3b755ec4dbbb64ce5594984"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table writes requiring squashed modifies <br /></td></tr>
@@ -1089,10 +1089,10 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_FAIL_IN_RECONCILIATION</b></td></tr>
 <tr class="memdesc:ga5c4de42cc667c059ae6bf7d88e5c581e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: pages selected for eviction unable to be evicted because of failure in reconciliation <br /></td></tr>
 <tr class="separator:ga5c4de42cc667c059ae6bf7d88e5c581e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3c5c23b981ca6c69e0c90d05996553c8"><td class="memItemLeft" align="right" valign="top"><a id="ga3c5c23b981ca6c69e0c90d05996553c8" name="ga3c5c23b981ca6c69e0c90d05996553c8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_FAIL_CHECKPOINT_OUT_OF_ORDER_TS</b></td></tr>
-<tr class="memdesc:ga3c5c23b981ca6c69e0c90d05996553c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: pages selected for eviction unable to be evicted because of race between checkpoint and out of order timestamps handling <br /></td></tr>
-<tr class="separator:ga3c5c23b981ca6c69e0c90d05996553c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81a99673e2ef73ec1af80967e1364cef"><td class="memItemLeft" align="right" valign="top"><a id="ga81a99673e2ef73ec1af80967e1364cef" name="ga81a99673e2ef73ec1af80967e1364cef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_FAIL_CHECKPOINT_NO_TS</b></td></tr>
+<tr class="memdesc:ga81a99673e2ef73ec1af80967e1364cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: pages selected for eviction unable to be evicted because of race between checkpoint and updates without timestamps <br /></td></tr>
+<tr class="separator:ga81a99673e2ef73ec1af80967e1364cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3e85a0cd390c4cf2ed3c578235c1f7d6"><td class="memItemLeft" align="right" valign="top"><a id="ga3e85a0cd390c4cf2ed3c578235c1f7d6" name="ga3e85a0cd390c4cf2ed3c578235c1f7d6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CACHE_EVICTION_WALK</b></td></tr>
 <tr class="memdesc:ga3e85a0cd390c4cf2ed3c578235c1f7d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: pages walked for eviction <br /></td></tr>
@@ -1289,6 +1289,14 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CURSOR_SEARCH_NEAR_PREFIX_FAST_PATHS</b></td></tr>
 <tr class="memdesc:gaa2c972e3f9b3c8ea664abbc3f1ff54c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: Total number of times a search near has exited due to prefix config <br /></td></tr>
 <tr class="separator:gaa2c972e3f9b3c8ea664abbc3f1ff54c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fd1b4edcd4cc26d7a5d98cea04e7c8f"><td class="memItemLeft" align="right" valign="top"><a id="ga0fd1b4edcd4cc26d7a5d98cea04e7c8f" name="ga0fd1b4edcd4cc26d7a5d98cea04e7c8f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CURSOR_REPOSITION_FAILED</b></td></tr>
+<tr class="memdesc:ga0fd1b4edcd4cc26d7a5d98cea04e7c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: Total number of times cursor fails to temporarily release pinned page to encourage eviction of hot or large page <br /></td></tr>
+<tr class="separator:ga0fd1b4edcd4cc26d7a5d98cea04e7c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee8d49685350ae1c04e3b487c6018ad0"><td class="memItemLeft" align="right" valign="top"><a id="gaee8d49685350ae1c04e3b487c6018ad0" name="gaee8d49685350ae1c04e3b487c6018ad0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CURSOR_REPOSITION</b></td></tr>
+<tr class="memdesc:gaee8d49685350ae1c04e3b487c6018ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: Total number of times cursor temporarily releases pinned page to encourage eviction of hot or large page <br /></td></tr>
+<tr class="separator:gaee8d49685350ae1c04e3b487c6018ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga90bdf09ee9b231ffde052d753e0ff59d"><td class="memItemLeft" align="right" valign="top"><a id="ga90bdf09ee9b231ffde052d753e0ff59d" name="ga90bdf09ee9b231ffde052d753e0ff59d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_CURSOR_CACHED_COUNT</b></td></tr>
 <tr class="memdesc:ga90bdf09ee9b231ffde052d753e0ff59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: cached cursor count <br /></td></tr>
@@ -2121,10 +2129,6 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_TIERED_RETENTION</b></td></tr>
 <tr class="memdesc:gae532cff04a52e610ff51e4c64b44c7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: tiered storage local retention time (secs) <br /></td></tr>
 <tr class="separator:gae532cff04a52e610ff51e4c64b44c7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b057bc4b97dc2839e345da9d2856a64"><td class="memItemLeft" align="right" valign="top"><a id="ga6b057bc4b97dc2839e345da9d2856a64" name="ga6b057bc4b97dc2839e345da9d2856a64"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_TIERED_OBJECT_SIZE</b></td></tr>
-<tr class="memdesc:ga6b057bc4b97dc2839e345da9d2856a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: tiered storage object size <br /></td></tr>
-<tr class="separator:ga6b057bc4b97dc2839e345da9d2856a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa67758a777bba986d877e9b7bf0647a8"><td class="memItemLeft" align="right" valign="top"><a id="gaa67758a777bba986d877e9b7bf0647a8" name="gaa67758a777bba986d877e9b7bf0647a8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_CONN_THREAD_FSYNC_ACTIVE</b></td></tr>
 <tr class="memdesc:gaa67758a777bba986d877e9b7bf0647a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">thread-state: active filesystem fsync calls <br /></td></tr>
@@ -2701,22 +2705,22 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_FAIL</b></td></tr>
 <tr class="memdesc:ga805d4bd189cdd57d212c4b5c138ad98e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: data source pages selected for eviction unable to be evicted <br /></td></tr>
 <tr class="separator:ga805d4bd189cdd57d212c4b5c138ad98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2de55f37d2fcc4ec12023c80e5fe4b56"><td class="memItemLeft" align="right" valign="top"><a id="ga2de55f37d2fcc4ec12023c80e5fe4b56" name="ga2de55f37d2fcc4ec12023c80e5fe4b56"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_1</b></td></tr>
-<tr class="memdesc:ga2de55f37d2fcc4ec12023c80e5fe4b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting an out of order on disk value behind the last update on the chain <br /></td></tr>
-<tr class="separator:ga2de55f37d2fcc4ec12023c80e5fe4b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga433638e8a37a6164ffab99f78d542502"><td class="memItemLeft" align="right" valign="top"><a id="ga433638e8a37a6164ffab99f78d542502" name="ga433638e8a37a6164ffab99f78d542502"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_2</b></td></tr>
-<tr class="memdesc:ga433638e8a37a6164ffab99f78d542502"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting an out of order tombstone ahead of the selected on disk update <br /></td></tr>
-<tr class="separator:ga433638e8a37a6164ffab99f78d542502"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad229e5cb84e00e58472e2e0ceeae6e1a"><td class="memItemLeft" align="right" valign="top"><a id="gad229e5cb84e00e58472e2e0ceeae6e1a" name="gad229e5cb84e00e58472e2e0ceeae6e1a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_3</b></td></tr>
-<tr class="memdesc:gad229e5cb84e00e58472e2e0ceeae6e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting an out of order tombstone ahead of the selected on disk update after validating the update chain <br /></td></tr>
-<tr class="separator:gad229e5cb84e00e58472e2e0ceeae6e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd553b47605ae1a747f63c78083266d6"><td class="memItemLeft" align="right" valign="top"><a id="gacd553b47605ae1a747f63c78083266d6" name="gacd553b47605ae1a747f63c78083266d6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_OOO_CHECKPOINT_RACE_4</b></td></tr>
-<tr class="memdesc:gacd553b47605ae1a747f63c78083266d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting out of order timestamps on the update chain after the selected on disk update <br /></td></tr>
-<tr class="separator:gacd553b47605ae1a747f63c78083266d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3084b55c971ad1bfcdc2453bd4fc4880"><td class="memItemLeft" align="right" valign="top"><a id="ga3084b55c971ad1bfcdc2453bd4fc4880" name="ga3084b55c971ad1bfcdc2453bd4fc4880"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_1</b></td></tr>
+<tr class="memdesc:ga3084b55c971ad1bfcdc2453bd4fc4880"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting a disk value without a timestamp behind the last update on the chain <br /></td></tr>
+<tr class="separator:ga3084b55c971ad1bfcdc2453bd4fc4880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9cca825cb4290ea2904f69c07d647feb"><td class="memItemLeft" align="right" valign="top"><a id="ga9cca825cb4290ea2904f69c07d647feb" name="ga9cca825cb4290ea2904f69c07d647feb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_2</b></td></tr>
+<tr class="memdesc:ga9cca825cb4290ea2904f69c07d647feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting a tombstone without a timestamp ahead of the selected on disk update <br /></td></tr>
+<tr class="separator:ga9cca825cb4290ea2904f69c07d647feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f25bd0f448fa94f13aaad99c51f6223"><td class="memItemLeft" align="right" valign="top"><a id="ga5f25bd0f448fa94f13aaad99c51f6223" name="ga5f25bd0f448fa94f13aaad99c51f6223"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_3</b></td></tr>
+<tr class="memdesc:ga5f25bd0f448fa94f13aaad99c51f6223"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting a tombstone without a timestamp ahead of the selected on disk update after validating the update chain <br /></td></tr>
+<tr class="separator:ga5f25bd0f448fa94f13aaad99c51f6223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa591bf48ea8f149ee294b00656c177d0"><td class="memItemLeft" align="right" valign="top"><a id="gaa591bf48ea8f149ee294b00656c177d0" name="gaa591bf48ea8f149ee294b00656c177d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_BLOCKED_NO_TS_CHECKPOINT_RACE_4</b></td></tr>
+<tr class="memdesc:gaa591bf48ea8f149ee294b00656c177d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction gave up due to detecting update chain entries without timestamps after the selected on disk update <br /></td></tr>
+<tr class="separator:gaa591bf48ea8f149ee294b00656c177d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa9064c56649bc3fdfc11bb7f7c5086fc"><td class="memItemLeft" align="right" valign="top"><a id="gaa9064c56649bc3fdfc11bb7f7c5086fc" name="gaa9064c56649bc3fdfc11bb7f7c5086fc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_EVICTION_WALK_PASSES</b></td></tr>
 <tr class="memdesc:gaa9064c56649bc3fdfc11bb7f7c5086fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: eviction walk passes of a file <br /></td></tr>
@@ -2789,14 +2793,6 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_INSERT_RESTART</b></td></tr>
 <tr class="memdesc:ga2ba37fe4058438bbc060b3f55ee9ba50"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table insert calls that returned restart <br /></td></tr>
 <tr class="separator:ga2ba37fe4058438bbc060b3f55ee9ba50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae038a28d4cb936df7c390fbb46341bc3"><td class="memItemLeft" align="right" valign="top"><a id="gae038a28d4cb936df7c390fbb46341bc3" name="gae038a28d4cb936df7c390fbb46341bc3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_ORDER_LOSE_DURABLE_TIMESTAMP</b></td></tr>
-<tr class="memdesc:gae038a28d4cb936df7c390fbb46341bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table out-of-order resolved updates that lose their durable timestamp <br /></td></tr>
-<tr class="separator:gae038a28d4cb936df7c390fbb46341bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2cddfd2e3da158e9f4e2f9a5340af789"><td class="memItemLeft" align="right" valign="top"><a id="ga2cddfd2e3da158e9f4e2f9a5340af789" name="ga2cddfd2e3da158e9f4e2f9a5340af789"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_ORDER_REINSERT</b></td></tr>
-<tr class="memdesc:ga2cddfd2e3da158e9f4e2f9a5340af789"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table out-of-order updates that were fixed up by reinserting with the fixed timestamp <br /></td></tr>
-<tr class="separator:ga2cddfd2e3da158e9f4e2f9a5340af789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2d746771b67008f25e5fd466d04f2e7a"><td class="memItemLeft" align="right" valign="top"><a id="ga2d746771b67008f25e5fd466d04f2e7a" name="ga2d746771b67008f25e5fd466d04f2e7a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_READ</b></td></tr>
 <tr class="memdesc:ga2d746771b67008f25e5fd466d04f2e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table reads <br /></td></tr>
@@ -2809,6 +2805,10 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_READ_SQUASH</b></td></tr>
 <tr class="memdesc:gaad9b93592bc1a1dc7e4a4198686e1282"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table reads requiring squashed modifies <br /></td></tr>
 <tr class="separator:gaad9b93592bc1a1dc7e4a4198686e1282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae038a28d4cb936df7c390fbb46341bc3"><td class="memItemLeft" align="right" valign="top"><a id="gae038a28d4cb936df7c390fbb46341bc3" name="gae038a28d4cb936df7c390fbb46341bc3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_ORDER_LOSE_DURABLE_TIMESTAMP</b></td></tr>
+<tr class="memdesc:gae038a28d4cb936df7c390fbb46341bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table resolved updates without timestamps that lose their durable timestamp <br /></td></tr>
+<tr class="separator:gae038a28d4cb936df7c390fbb46341bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaac71ce2cc27f8576357cbd1356f319aa"><td class="memItemLeft" align="right" valign="top"><a id="gaac71ce2cc27f8576357cbd1356f319aa" name="gaac71ce2cc27f8576357cbd1356f319aa"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_KEY_TRUNCATE_RTS_UNSTABLE</b></td></tr>
 <tr class="memdesc:gaac71ce2cc27f8576357cbd1356f319aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation by rollback to stable to remove an unstable update <br /></td></tr>
@@ -2821,14 +2821,18 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_KEY_TRUNCATE</b></td></tr>
 <tr class="memdesc:ga32c545f7c61a032d70754a0382cff472"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove an update <br /></td></tr>
 <tr class="separator:ga32c545f7c61a032d70754a0382cff472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae23a1aa15faae774e090b71ccfb19524"><td class="memItemLeft" align="right" valign="top"><a id="gae23a1aa15faae774e090b71ccfb19524" name="gae23a1aa15faae774e090b71ccfb19524"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_ORDER_REMOVE</b></td></tr>
+<tr class="memdesc:gae23a1aa15faae774e090b71ccfb19524"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove range of updates due to an update without a timestamp on data page <br /></td></tr>
+<tr class="separator:gae23a1aa15faae774e090b71ccfb19524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab3d57103f47aa21f9841e3f578f16ab6"><td class="memItemLeft" align="right" valign="top"><a id="gab3d57103f47aa21f9841e3f578f16ab6" name="gab3d57103f47aa21f9841e3f578f16ab6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_KEY_TRUNCATE_ONPAGE_REMOVAL</b></td></tr>
 <tr class="memdesc:gab3d57103f47aa21f9841e3f578f16ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove range of updates due to key being removed from the data page during reconciliation <br /></td></tr>
 <tr class="separator:gab3d57103f47aa21f9841e3f578f16ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae23a1aa15faae774e090b71ccfb19524"><td class="memItemLeft" align="right" valign="top"><a id="gae23a1aa15faae774e090b71ccfb19524" name="gae23a1aa15faae774e090b71ccfb19524"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_ORDER_REMOVE</b></td></tr>
-<tr class="memdesc:gae23a1aa15faae774e090b71ccfb19524"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table truncation to remove range of updates due to out-of-order timestamp update on data page <br /></td></tr>
-<tr class="separator:gae23a1aa15faae774e090b71ccfb19524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cddfd2e3da158e9f4e2f9a5340af789"><td class="memItemLeft" align="right" valign="top"><a id="ga2cddfd2e3da158e9f4e2f9a5340af789" name="ga2cddfd2e3da158e9f4e2f9a5340af789"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_ORDER_REINSERT</b></td></tr>
+<tr class="memdesc:ga2cddfd2e3da158e9f4e2f9a5340af789"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table updates without timestamps fixed up by reinserting with the fixed timestamp <br /></td></tr>
+<tr class="separator:ga2cddfd2e3da158e9f4e2f9a5340af789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad7be880a45ec68ef8e1e4003e6ace83a"><td class="memItemLeft" align="right" valign="top"><a id="gad7be880a45ec68ef8e1e4003e6ace83a" name="gad7be880a45ec68ef8e1e4003e6ace83a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CACHE_HS_WRITE_SQUASH</b></td></tr>
 <tr class="memdesc:gad7be880a45ec68ef8e1e4003e6ace83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache: history store table writes requiring squashed modifies <br /></td></tr>
@@ -3081,6 +3085,14 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CURSOR_SEARCH_NEAR_PREFIX_FAST_PATHS</b></td></tr>
 <tr class="memdesc:ga8eac2073822ae363fed963f4ddfad665"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: Total number of times a search near has exited due to prefix config <br /></td></tr>
 <tr class="separator:ga8eac2073822ae363fed963f4ddfad665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc7e9c0245fc171cd71aa6923f911144"><td class="memItemLeft" align="right" valign="top"><a id="gacc7e9c0245fc171cd71aa6923f911144" name="gacc7e9c0245fc171cd71aa6923f911144"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CURSOR_REPOSITION_FAILED</b></td></tr>
+<tr class="memdesc:gacc7e9c0245fc171cd71aa6923f911144"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: Total number of times cursor fails to temporarily release pinned page to encourage eviction of hot or large page <br /></td></tr>
+<tr class="separator:gacc7e9c0245fc171cd71aa6923f911144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53060318ad0aa49af2f5271f3eed6e9b"><td class="memItemLeft" align="right" valign="top"><a id="ga53060318ad0aa49af2f5271f3eed6e9b" name="ga53060318ad0aa49af2f5271f3eed6e9b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CURSOR_REPOSITION</b></td></tr>
+<tr class="memdesc:ga53060318ad0aa49af2f5271f3eed6e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: Total number of times cursor temporarily releases pinned page to encourage eviction of hot or large page <br /></td></tr>
+<tr class="separator:ga53060318ad0aa49af2f5271f3eed6e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga37bb741ecdd7e0488da729e9d766bcdc"><td class="memItemLeft" align="right" valign="top"><a id="ga37bb741ecdd7e0488da729e9d766bcdc" name="ga37bb741ecdd7e0488da729e9d766bcdc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_CURSOR_INSERT_BULK</b></td></tr>
 <tr class="memdesc:ga37bb741ecdd7e0488da729e9d766bcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">cursor: bulk loaded cursor insert calls <br /></td></tr>
@@ -3349,22 +3361,6 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_SESSION_COMPACT</b></td></tr>
 <tr class="memdesc:gae3a08df82d5b3571c61bed609980f845"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: object compaction <br /></td></tr>
 <tr class="separator:gae3a08df82d5b3571c61bed609980f845"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga27751138b39424c1f665b3899f54386d"><td class="memItemLeft" align="right" valign="top"><a id="ga27751138b39424c1f665b3899f54386d" name="ga27751138b39424c1f665b3899f54386d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_TIERED_WORK_UNITS_DEQUEUED</b></td></tr>
-<tr class="memdesc:ga27751138b39424c1f665b3899f54386d"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: tiered operations dequeued and processed <br /></td></tr>
-<tr class="separator:ga27751138b39424c1f665b3899f54386d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b127a2e1d6334a0b15f88425bdd6925"><td class="memItemLeft" align="right" valign="top"><a id="ga1b127a2e1d6334a0b15f88425bdd6925" name="ga1b127a2e1d6334a0b15f88425bdd6925"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_TIERED_WORK_UNITS_CREATED</b></td></tr>
-<tr class="memdesc:ga1b127a2e1d6334a0b15f88425bdd6925"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: tiered operations scheduled <br /></td></tr>
-<tr class="separator:ga1b127a2e1d6334a0b15f88425bdd6925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ba04ac772339dd5be439d80d2f3af19"><td class="memItemLeft" align="right" valign="top"><a id="ga4ba04ac772339dd5be439d80d2f3af19" name="ga4ba04ac772339dd5be439d80d2f3af19"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_TIERED_RETENTION</b></td></tr>
-<tr class="memdesc:ga4ba04ac772339dd5be439d80d2f3af19"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: tiered storage local retention time (secs) <br /></td></tr>
-<tr class="separator:ga4ba04ac772339dd5be439d80d2f3af19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabc08570b593590e6171e764a68a7d36f"><td class="memItemLeft" align="right" valign="top"><a id="gabc08570b593590e6171e764a68a7d36f" name="gabc08570b593590e6171e764a68a7d36f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_TIERED_OBJECT_SIZE</b></td></tr>
-<tr class="memdesc:gabc08570b593590e6171e764a68a7d36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">session: tiered storage object size <br /></td></tr>
-<tr class="separator:gabc08570b593590e6171e764a68a7d36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4ce7485574d7923e0f5355759d2b4da3"><td class="memItemLeft" align="right" valign="top"><a id="ga4ce7485574d7923e0f5355759d2b4da3" name="ga4ce7485574d7923e0f5355759d2b4da3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>WT_STAT_DSRC_TXN_READ_RACE_PREPARE_UPDATE</b></td></tr>
 <tr class="memdesc:ga4ce7485574d7923e0f5355759d2b4da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">transaction: race to read prepared update retry <br /></td></tr>
@@ -4038,8 +4034,8 @@ The number of bytes in the value to be replaced. <p >If the size is zero, no byt
 <div class="line">          <a class="code hl_function" href="group__wt.html#ga512297da65ccc30ac91bf6adf95f043f">wiredtiger_config_parser_open</a>(NULL, config_string, strlen(config_string), &amp;parser));</div>
 <div class="line">        error_check(parser-&gt;<a class="code hl_function" href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a44eea5e27a4da10006ab444ee7cf00f3">close</a>(parser));</div>
 <div class="ttc" id="agroup__wt_html_ga512297da65ccc30ac91bf6adf95f043f"><div class="ttname"><a href="group__wt.html#ga512297da65ccc30ac91bf6adf95f043f">wiredtiger_config_parser_open</a></div><div class="ttdeci">int wiredtiger_config_parser_open(WT_SESSION *session, const char *config, size_t len, WT_CONFIG_PARSER **config_parserp)</div><div class="ttdoc">Create a handle that can be used to parse or create configuration strings compatible with WiredTiger ...</div></div>
-<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html">WT_CONFIG_ITEM</a></div><div class="ttdoc">The configuration information returned by the WiredTiger configuration parsing functions in the WT_EX...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3536</div></div>
-<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___p_a_r_s_e_r_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html">WT_CONFIG_PARSER</a></div><div class="ttdoc">A handle that can be used to search and traverse configuration strings compatible with WiredTiger API...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3663</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___i_t_e_m_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___i_t_e_m.html">WT_CONFIG_ITEM</a></div><div class="ttdoc">The configuration information returned by the WiredTiger configuration parsing functions in the WT_EX...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3527</div></div>
+<div class="ttc" id="astruct_w_t___c_o_n_f_i_g___p_a_r_s_e_r_html"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html">WT_CONFIG_PARSER</a></div><div class="ttdoc">A handle that can be used to search and traverse configuration strings compatible with WiredTiger API...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3654</div></div>
 <div class="ttc" id="astruct_w_t___c_o_n_f_i_g___p_a_r_s_e_r_html_a44eea5e27a4da10006ab444ee7cf00f3"><div class="ttname"><a href="struct_w_t___c_o_n_f_i_g___p_a_r_s_e_r.html#a44eea5e27a4da10006ab444ee7cf00f3">WT_CONFIG_PARSER::close</a></div><div class="ttdeci">int close(WT_CONFIG_PARSER *config_parser)</div><div class="ttdoc">Close the configuration scanner releasing any resources.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -5139,7 +5135,7 @@ Packing Examples</h1>
 <div class="fragment"><div class="line">        uint32_t crc32c, (*func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, size_t);</div>
 <div class="line">        func = <a class="code hl_variable" href="group__wt.html#ga205f45ca53fdac610f8a9c59c84b5e12">wiredtiger_crc32c_func</a>();</div>
 <div class="line">        crc32c = func(buffer, len);</div>
-<div class="ttc" id="agroup__wt_html_ga205f45ca53fdac610f8a9c59c84b5e12"><div class="ttname"><a href="group__wt.html#ga205f45ca53fdac610f8a9c59c84b5e12">wiredtiger_crc32c_func</a></div><div class="ttdeci">uint32_t(*)(const void *, size_t) wiredtiger_crc32c_func(void)</div><div class="ttdoc">Return a pointer to a function that calculates a CRC32C checksum.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3723</div></div>
+<div class="ttc" id="agroup__wt_html_ga205f45ca53fdac610f8a9c59c84b5e12"><div class="ttname"><a href="group__wt.html#ga205f45ca53fdac610f8a9c59c84b5e12">wiredtiger_crc32c_func</a></div><div class="ttdeci">uint32_t(*)(const void *, size_t) wiredtiger_crc32c_func(void)</div><div class="ttdoc">Return a pointer to a function that calculates a CRC32C checksum.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3714</div></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>a pointer to a function that takes a buffer and length and returns the CRC32C checksum </dd></dl>
 
 </div>

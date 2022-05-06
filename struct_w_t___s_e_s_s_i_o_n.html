@@ -257,11 +257,9 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>app_metadata</code></td><td>application-owned metadata for this object.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>assert = (</code></td><td>enable enhanced timestamp checking with error messages and optional core dump.</td><td>a set of related configuration options defined below. </td></tr>
+<td><code>assert = (</code></td><td>declare timestamp usage.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>check timestamps are <code>always</code> or <code>never</code> used on reads with this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check. Should be set to <code>none</code> if mixed read use is allowed.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
-<tr>
-<td><code>&#160;&#160;&#160;&#160; write_timestamp</code></td><td>check timestamps are used consistently with the configured <code>write_timestamp_usage</code> option for this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check.</td><td>a string, chosen from the following options: <code>"off"</code>, <code>"on"</code>; default <code>off</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>check timestamps are <code>always</code> or <code>never</code> used on reads with this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
 <tr>
 <td><code> )</code></td><td></td><td></td></tr>
 <tr>
@@ -279,7 +277,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>readonly</code></td><td>the file is read-only. All methods that may modify a file are disabled. See <a class="el" href="readonly.html">Database read-only mode</a> for more information.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
-<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on modifications to the table. This option should be used in conjunction with the corresponding <code>write_timestamp</code> configuration under the <code>assert</code> option to provide logging and assertions for incorrect timestamp usage. The choices are <code>always</code> which ensures a timestamp is used for every operation on a table, <code>ordered</code> which ensures that once timestamps are used for a key, they are always used, and also that subsequent updates to each key must use increasing timestamps, <code>mixed_mode</code> is like <code>ordered</code> except that updates with no timestamp are allowed at any time, <code>never</code> enforces that timestamps are never used for a table and <code>none</code> does not enforce any expectation on timestamp usage meaning that no log message or assertions will be produced regardless of the corresponding <code>assert</code> setting. (The <code>key_consistent</code> choice is no longer supported, retained for backward compatibility.).</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"key_consistent"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
+<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on table modifications. The choices are the default, which ensures that once timestamps are used for a key, they are always used, and also that multiple updates to a key never use decreasing timestamps and <code>never</code> which enforces that timestamps are never used for a table. (The <code>always</code>, <code>key_consistent</code>, <code>mixed_mode</code> and <code>ordered</code> choices should not be used, and are retained for backward compatibility.).</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"key_consistent"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -347,7 +345,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">    <span class="comment">/*</span></div>
 <div class="line"><span class="comment">     * Cursors remain open and may be used for multiple transactions.</span></div>
 <div class="line"><span class="comment">     */</span></div>
-<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3805</div></div>
+<div class="ttc" id="agroup__wt_html_ga5ee3c6fcd074e11efd118f3e68e91db8"><div class="ttname"><a href="group__wt.html#ga5ee3c6fcd074e11efd118f3e68e91db8">WT_ROLLBACK</a></div><div class="ttdeci">#define WT_ROLLBACK</div><div class="ttdoc">Conflict between concurrent operations.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3796</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -361,6 +359,8 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <td><code>isolation</code></td><td>the isolation level for this transaction; defaults to the session's isolation level.</td><td>a string, chosen from the following options: <code>"read-uncommitted"</code>, <code>"read-committed"</code>, <code>"snapshot"</code>; default empty. </td></tr>
 <tr>
 <td><code>name</code></td><td>name of the transaction for tracing and debugging.</td><td>a string; default empty. </td></tr>
+<tr>
+<td><code>no_timestamp</code></td><td>allow a commit without a timestamp, creating a value that has "always existed" and is visible regardless of timestamp. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
 <td><code>operation_timeout_ms</code></td><td>when non-zero, a requested limit on the time taken to complete operations in this transaction. Time is measured in real time milliseconds from the start of each WiredTiger API call. There is no guarantee any operation will not take longer than this amount of time. If WiredTiger notices the limit has been exceeded, an operation may return a WT_ROLLBACK error. Default is to have no limit.</td><td>an integer greater than or equal to 1; default <code>0</code>. </td></tr>
 <tr>
@@ -717,11 +717,9 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>app_metadata</code></td><td>application-owned metadata for this object.</td><td>a string; default empty. </td></tr>
 <tr>
-<td><code>assert = (</code></td><td>enable enhanced timestamp checking with error messages and optional core dump.</td><td>a set of related configuration options defined below. </td></tr>
+<td><code>assert = (</code></td><td>declare timestamp usage.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>check timestamps are <code>always</code> or <code>never</code> used on reads with this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check. Should be set to <code>none</code> if mixed read use is allowed.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
-<tr>
-<td><code>&#160;&#160;&#160;&#160; write_timestamp</code></td><td>check timestamps are used consistently with the configured <code>write_timestamp_usage</code> option for this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check.</td><td>a string, chosen from the following options: <code>"off"</code>, <code>"on"</code>; default <code>off</code>. </td></tr>
+<td><code>&#160;&#160;&#160;&#160;read_timestamp</code></td><td>check timestamps are <code>always</code> or <code>never</code> used on reads with this table, writing an error message if policy is violated. If the library was built in diagnostic mode, drop core at the failing check.</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"never"</code>, <code>"none"</code>; default <code>none</code>. </td></tr>
 <tr>
 <td><code> )</code></td><td></td><td></td></tr>
 <tr>
@@ -770,6 +768,8 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <td><code>&#160;&#160;&#160;&#160; enabled</code></td><td>whether to import the input URI from disk.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
 <td><code>&#160;&#160;&#160;&#160;file_metadata</code></td><td>the file configuration extracted from the metadata of the export database.</td><td>a string; default empty. </td></tr>
+<tr>
+<td><code>&#160;&#160;&#160;&#160;metadata_file</code></td><td>File that contains all the relevant metadata information for the URI to import. The file is generated by backup:export cursor.</td><td>a string; default empty. </td></tr>
 <tr>
 <td><code>&#160;&#160;&#160;&#160;repair</code></td><td>whether to reconstruct the metadata from the raw file content.</td><td>a boolean flag; default <code>false</code>. </td></tr>
 <tr>
@@ -863,15 +863,13 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>&#160;&#160;&#160;&#160;name</code></td><td>permitted values are <code>"none"</code> or custom storage source name created with WT_CONNECTION::add_storage_source. See <a class="el" href="custom_storage_sources.html">Custom Tiered Storage sources</a> for more information.</td><td>a string; default <code>none</code>. </td></tr>
 <tr>
-<td><code>&#160;&#160;&#160;&#160;object_target_size</code></td><td>the approximate size of objects before creating them on the tiered storage tier.</td><td>an integer between 100K and 10TB; default <code>10M</code>. </td></tr>
-<tr>
 <td><code> )</code></td><td></td><td></td></tr>
 <tr>
 <td><code>type</code></td><td>set the type of data source used to store a column group, index or simple table. By default, a <code>"file:"</code> URI is derived from the object name. The <code>type</code> configuration can be used to switch to a different data source, such as LSM or an extension configured by the application.</td><td>a string; default <code>file</code>. </td></tr>
 <tr>
 <td><code>value_format</code></td><td>the format of the data packed into value items. See <a class="el" href="schema.html#schema_format_types">Format types</a> for details. By default, the value_format is <code>'u'</code> and applications use a <a class="el" href="group__wt.html#struct_w_t___i_t_e_m" title="A raw item of data to be managed, including a pointer to the data and a length.">WT_ITEM</a> structure to manipulate raw byte arrays. Value items of type 't' are bitfields, and when configured with record number type keys, will be stored using a fixed-length store.</td><td>a format string; default <code>u</code>. </td></tr>
 <tr>
-<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on modifications to the table. This option should be used in conjunction with the corresponding <code>write_timestamp</code> configuration under the <code>assert</code> option to provide logging and assertions for incorrect timestamp usage. The choices are <code>always</code> which ensures a timestamp is used for every operation on a table, <code>ordered</code> which ensures that once timestamps are used for a key, they are always used, and also that subsequent updates to each key must use increasing timestamps, <code>mixed_mode</code> is like <code>ordered</code> except that updates with no timestamp are allowed at any time, <code>never</code> enforces that timestamps are never used for a table and <code>none</code> does not enforce any expectation on timestamp usage meaning that no log message or assertions will be produced regardless of the corresponding <code>assert</code> setting. (The <code>key_consistent</code> choice is no longer supported, retained for backward compatibility.).</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"key_consistent"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
+<td><code>write_timestamp_usage</code></td><td>describe how timestamps are expected to be used on table modifications. The choices are the default, which ensures that once timestamps are used for a key, they are always used, and also that multiple updates to a key never use decreasing timestamps and <code>never</code> which enforces that timestamps are never used for a table. (The <code>always</code>, <code>key_consistent</code>, <code>mixed_mode</code> and <code>ordered</code> choices should not be used, and are retained for backward compatibility.).</td><td>a string, chosen from the following options: <code>"always"</code>, <code>"key_consistent"</code>, <code>"mixed_mode"</code>, <code>"never"</code>, <code>"none"</code>, <code>"ordered"</code>; default <code>none</code>. </td></tr>
 </table>
 </td></tr>
   </table>
@@ -1005,7 +1003,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <div class="line">          <span class="stringliteral">&quot;: country %s, year %&quot;</span> PRIu16 <span class="stringliteral">&quot;, population %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, country, year, population);</div>
 <div class="line">    }</div>
 <div class="line">    scan_end_check(ret == <a class="code hl_define" href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a>);</div>
-<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3826</div></div>
+<div class="ttc" id="agroup__wt_html_ga3c9e1b494d95cf34404ab7a974af6bf8"><div class="ttname"><a href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8">WT_NOTFOUND</a></div><div class="ttdeci">#define WT_NOTFOUND</div><div class="ttdoc">Item not found.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:3817</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
@@ -1258,7 +1256,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <td><code>bulk</code></td><td>configure the cursor for bulk-loading, a fast, initial load path (see <a class="el" href="tune_bulk_load.html">Bulk-load</a> for more information). Bulk-load may only be used for newly created objects and applications should use the <a class="el" href="struct_w_t___c_u_r_s_o_r.html#aac90d9fbcc031570f924db55f8a1cee3" title="Insert a record and optionally update an existing record.">WT_CURSOR::insert</a> method to insert rows. When bulk-loading, rows must be loaded in sorted order. The value is usually a true/false flag; when bulk-loading fixed-length column store objects, the special value <code>bitmap</code> allows chunks of a memory resident bitmap to be loaded directly into a file by passing a <code><a class="el" href="group__wt.html#struct_w_t___i_t_e_m" title="A raw item of data to be managed, including a pointer to the data and a length.">WT_ITEM</a></code> to <a class="el" href="struct_w_t___c_u_r_s_o_r.html#a27f7cbd0cd3e561f6a145704813ad64c" title="Set the value for the next operation.">WT_CURSOR::set_value</a> where the <code>size</code> field indicates the number of records in the bitmap (as specified by the object's <code>value_format</code> configuration). Bulk-loaded bitmap values must end on a byte boundary relative to the bit count (except for the last set of values loaded).</td><td>a string; default <code>false</code>. </td></tr>
 <tr>
-<td><code>checkpoint</code></td><td>the name of a checkpoint to open (the reserved name "WiredTigerCheckpoint" opens the most recent internal checkpoint taken for the object). The cursor does not support data modification.</td><td>a string; default empty. </td></tr>
+<td><code>checkpoint</code></td><td>the name of a checkpoint to open (the reserved name "WiredTigerCheckpoint" opens the most recent checkpoint taken for the object). The cursor does not support data modification.</td><td>a string; default empty. </td></tr>
 <tr>
 <td><code>debug = (</code></td><td>configure debug specific behavior on a cursor. Generally only used for internal testing purposes.</td><td>a set of related configuration options defined below. </td></tr>
 <tr>
@@ -1418,13 +1416,13 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 <tr>
 <th>Name</th><th>Effect</th><th>Values </th></tr>
 <tr>
-<td><code>get</code></td><td>specify which timestamp to query: <code>commit</code> returns the most recently set commit_timestamp; <code>first_commit</code> returns the first set commit_timestamp; <code>prepare</code> returns the timestamp used in preparing a transaction; <code>read</code> returns the timestamp at which the transaction is reading at. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string, chosen from the following options: <code>"commit"</code>, <code>"first_commit"</code>, <code>"prepare"</code>, <code>"read"</code>; default <code>read</code>. </td></tr>
+<td><code>get</code></td><td>specify which timestamp to query: <code>commit</code> returns the most recently set commit_timestamp; <code>first_commit</code> returns the first set commit_timestamp; <code>prepare</code> returns the timestamp used in preparing a transaction; <code>read</code> returns the timestamp at which the transaction is reading. See <a class="el" href="timestamp_txn_api.html">Managing the transaction timestamp state</a>.</td><td>a string, chosen from the following options: <code>"commit"</code>, <code>"first_commit"</code>, <code>"prepare"</code>, <code>"read"</code>; default <code>read</code>. </td></tr>
 </table>
 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>zero on success and a non-zero error code on failure. See <a class="el" href="error_handling.html">Error handling</a> for details. <a class="el" href="group__wt.html#ga3c9e1b494d95cf34404ab7a974af6bf8" title="Item not found.">WT_NOTFOUND</a> is returned if the session is not in a transaction or there is no matching timestamp. </dd></dl>
+<p>A timestamp of 0 is returned if the timestamp is not available or has not been set. </p><dl class="section return"><dt>Returns</dt><dd>zero on success and a non-zero error code on failure. See <a class="el" href="error_handling.html">Error handling</a> for details. </dd></dl>
 
 </div>
 </div>
@@ -1883,14 +1881,16 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>app_private</b></td
 </div><div class="memdoc">
 
 <p>Set a timestamp on a transaction numerically. </p>
-<p >Prefer this over <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#aa449082ce4de7ee86a773595c416a69f">timestamp_transaction</a> when the string parsing done in that method becomes a bottleneck.</p>
+<p >Prefer this method over <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#aa449082ce4de7ee86a773595c416a69f" title="Set a timestamp on a transaction.">WT_SESSION::timestamp_transaction</a> if the hexadecimal string parsing done in that method becomes a bottleneck.</p>
 <p >The <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#a1d4d22f14aef710c0c3ac6a543004686" title="Set a timestamp on a transaction numerically.">WT_SESSION.timestamp_transaction_uint</a> method can only be used at snapshot isolation.</p>
-<p >This method must be called on a session with an active transaction.<br  />
+<div class="fragment"><div class="line">        error_check(session-&gt;timestamp_transaction_uint(session, <a class="code hl_enumvalue" href="group__wt.html#gga3307ac01d47089125814f62e90b6ef6ea20ed2533cb281af4aa546fd73303e3c5">WT_TS_TXN_TYPE_COMMIT</a>, 42));</div>
+<div class="ttc" id="agroup__wt_html_gga3307ac01d47089125814f62e90b6ef6ea20ed2533cb281af4aa546fd73303e3c5"><div class="ttname"><a href="group__wt.html#gga3307ac01d47089125814f62e90b6ef6ea20ed2533cb281af4aa546fd73303e3c5">WT_TS_TXN_TYPE_COMMIT</a></div><div class="ttdeci">@ WT_TS_TXN_TYPE_COMMIT</div><div class="ttdoc">Commit timestamp.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:753</div></div>
+</div><!-- fragment --><p >This method must be called on a session with an active transaction.<br  />
 <br  />
  </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">session</td><td>the session handle </td></tr>
-    <tr><td class="paramname">which</td><td>the timestamp you wish to set. See <a class="el" href="group__wt.html#ga3307ac01d47089125814f62e90b6ef6e">WT_TS_TXN_TYPE</a> for available options, and <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#aa449082ce4de7ee86a773595c416a69f">timestamp_transaction</a> for constraints on when timestamps can be set. </td></tr>
+    <tr><td class="paramname">which</td><td>the timestamp being set (see <a class="el" href="group__wt.html#ga3307ac01d47089125814f62e90b6ef6e" title="WT_SESSION::timestamp_transaction_uint timestamp types.">WT_TS_TXN_TYPE</a> for available options, and <a class="el" href="struct_w_t___s_e_s_s_i_o_n.html#aa449082ce4de7ee86a773595c416a69f" title="Set a timestamp on a transaction.">WT_SESSION::timestamp_transaction</a> for constraints on the timestamps). </td></tr>
     <tr><td class="paramname">ts</td><td>the timestamp. </td></tr>
   </table>
   </dd>

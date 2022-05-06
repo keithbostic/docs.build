@@ -67,8 +67,7 @@ var programming =
       [ "Setting global timestamps", "timestamp_global_api.html#timestamp_global_setting_timestamps", [
         [ "Setting the global \"durable_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_durable_timestamp", null ],
         [ "Setting the \"oldest_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_oldest_timestamp", null ],
-        [ "Setting the \"stable_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_stable_timestamp", null ],
-        [ "Forcing global timestamps", "timestamp_global_api.html#timestamp_global_forcing", null ]
+        [ "Setting the \"stable_timestamp\" timestamp", "timestamp_global_api.html#timestamp_global_set_api_stable_timestamp", null ]
       ] ],
       [ "Querying global timestamps", "timestamp_global_api.html#timestamp_global_querying_timestamps", [
         [ "Reading the \"all_durable\" timestamp", "timestamp_global_api.html#timestamp_global_query_api_all_durable", null ],
@@ -81,7 +80,7 @@ var programming =
       ] ]
     ] ],
     [ "Managing the transaction timestamp state", "timestamp_txn_api.html", [
-      [ "Enforcing application timestamp behavior", "timestamp_txn_api.html#timestamp_txn_api_configure", null ],
+      [ "Application timestamp configuration", "timestamp_txn_api.html#timestamp_txn_api_configure", null ],
       [ "Querying transaction timestamp information", "timestamp_txn_api.html#timestamp_txn_api_query", null ],
       [ "Configuring transaction timestamp information with WT_SESSION::begin_transaction", "timestamp_txn_api.html#timestamp_txn_api_begin", null ],
       [ "Configuring transaction timestamp information with WT_SESSION::commit_transaction", "timestamp_txn_api.html#timestamp_txn_api_commit", null ],
@@ -100,8 +99,6 @@ var programming =
     [ "Miscellaneous timestamp topics", "timestamp_misc.html", [
       [ "Rounding up the read timestamp", "timestamp_misc.html#timestamp_read_roundup", null ],
       [ "Using rollback-to-stable with timestamps", "timestamp_misc.html#timestamp_misc_rts", null ],
-      [ "Using diagnostic configurations to enforce timestamp usage", "timestamp_misc.html#timestamp_misc_diagnostic", null ],
-      [ "Resetting the snapshot", "timestamp_misc.html#timestamp_misc_reset_snapshot", null ],
       [ "In-memory configurations and timestamps", "timestamp_misc.html#timestamps_misc_in_memory", null ]
     ] ],
     [ "Tutorial: transactions and ACID properties", "explain_acid.html", null ],

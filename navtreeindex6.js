@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a0ab6e469464fa132901f3292934ad26c":[1,1,2,1],
 "struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a1a7b6f26d733bd91ad8d205d8cb3482d":[1,1,2,0],
 "struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a4569fa21343c2681357dedb4dd5facc1":[1,1,2,4],
 "struct_w_t___d_a_t_a___s_o_u_r_c_e.html#a4f8baf9dba6309b6051f79c9cbbb10e2":[1,1,2,9],
@@ -125,7 +124,6 @@ var NAVTREEINDEX6 =
 "threads.html":[0,3,24],
 "threads.html#threads_example":[0,3,24,0],
 "timestamp_global_api.html":[0,3,11],
-"timestamp_global_api.html#timestamp_global_forcing":[0,3,11,0,3],
 "timestamp_global_api.html#timestamp_global_query_api_all_durable":[0,3,11,1,0],
 "timestamp_global_api.html#timestamp_global_query_api_last_checkpoint":[0,3,11,1,1],
 "timestamp_global_api.html#timestamp_global_query_api_oldest_reader":[0,3,11,1,2],
@@ -139,11 +137,9 @@ var NAVTREEINDEX6 =
 "timestamp_global_api.html#timestamp_global_set_api_stable_timestamp":[0,3,11,0,2],
 "timestamp_global_api.html#timestamp_global_setting_timestamps":[0,3,11,0],
 "timestamp_misc.html":[0,3,15],
-"timestamp_misc.html#timestamp_misc_diagnostic":[0,3,15,2],
-"timestamp_misc.html#timestamp_misc_reset_snapshot":[0,3,15,3],
 "timestamp_misc.html#timestamp_misc_rts":[0,3,15,1],
 "timestamp_misc.html#timestamp_read_roundup":[0,3,15,0],
-"timestamp_misc.html#timestamps_misc_in_memory":[0,3,15,4],
+"timestamp_misc.html#timestamps_misc_in_memory":[0,3,15,2],
 "timestamp_model.html":[0,3,10],
 "timestamp_model.html#timestamp_transactions":[0,3,10,1],
 "timestamp_model.html#timestamps_durability_checkpoint":[0,3,10,4],
@@ -249,5 +245,9 @@ var NAVTREEINDEX6 =
 "tune_file_alloc.html#tuning_system_file_block_allocation":[0,3,54,1],
 "tune_file_alloc.html#tuning_system_file_block_grow":[0,3,54,0],
 "tune_memory_allocator.html":[0,3,55],
-"tune_mutex.html":[0,3,56]
+"tune_mutex.html":[0,3,56],
+"tune_page_size_and_comp.html":[0,3,57],
+"tune_page_size_and_comp.html#allocation_size":[0,3,57,1,3],
+"tune_page_size_and_comp.html#compression_considerations":[0,3,57,2],
+"tune_page_size_and_comp.html#configurable_page_struct":[0,3,57,1]
 };

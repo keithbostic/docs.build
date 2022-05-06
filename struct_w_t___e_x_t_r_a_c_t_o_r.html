@@ -117,7 +117,7 @@ Public Attributes</h2></td></tr>
 <div class="fragment"><div class="line">    <span class="keyword">static</span> <a class="code hl_struct" href="struct_w_t___e_x_t_r_a_c_t_o_r.html">WT_EXTRACTOR</a> my_extractor = {my_extract, NULL, NULL};</div>
 <div class="line"> </div>
 <div class="line">    error_check(conn-&gt;add_extractor(conn, <span class="stringliteral">&quot;my_extractor&quot;</span>, &amp;my_extractor, NULL));</div>
-<div class="ttc" id="astruct_w_t___e_x_t_r_a_c_t_o_r_html"><div class="ttname"><a href="struct_w_t___e_x_t_r_a_c_t_o_r.html">WT_EXTRACTOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom extraction of index keys or column group ...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4403</div></div>
+<div class="ttc" id="astruct_w_t___e_x_t_r_a_c_t_o_r_html"><div class="ttname"><a href="struct_w_t___e_x_t_r_a_c_t_o_r.html">WT_EXTRACTOR</a></div><div class="ttdoc">The interface implemented by applications to provide custom extraction of index keys or column group ...</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:4394</div></div>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ex_extractor_8c-example.html#_a0">ex_extractor.c</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
@@ -168,7 +168,7 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html">WT_CURSOR</a></div><div class="ttdoc">A WT_CURSOR handle is the interface to a cursor.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:199</div></div>
 <div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html_aac90d9fbcc031570f924db55f8a1cee3"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html#aac90d9fbcc031570f924db55f8a1cee3">WT_CURSOR::insert</a></div><div class="ttdeci">int insert(WT_CURSOR *cursor)</div><div class="ttdoc">Insert a record and optionally update an existing record.</div></div>
 <div class="ttc" id="astruct_w_t___c_u_r_s_o_r_html_ad1088d719df40babc1f57d086691ebdc"><div class="ttname"><a href="struct_w_t___c_u_r_s_o_r.html#ad1088d719df40babc1f57d086691ebdc">WT_CURSOR::set_key</a></div><div class="ttdeci">void set_key(WT_CURSOR *cursor,...)</div><div class="ttdoc">Set the key for the next operation.</div></div>
-<div class="ttc" id="astruct_w_t___s_e_s_s_i_o_n_html"><div class="ttname"><a href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a></div><div class="ttdoc">All data operations are performed in the context of a WT_SESSION.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:751</div></div>
+<div class="ttc" id="astruct_w_t___s_e_s_s_i_o_n_html"><div class="ttname"><a href="struct_w_t___s_e_s_s_i_o_n.html">WT_SESSION</a></div><div class="ttdoc">All data operations are performed in the context of a WT_SESSION.</div><div class="ttdef"><b>Definition:</b> wiredtiger.in:766</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">extractor</td><td>the <a class="el" href="struct_w_t___e_x_t_r_a_c_t_o_r.html" title="The interface implemented by applications to provide custom extraction of index keys or column group ...">WT_EXTRACTOR</a> implementation </td></tr>
